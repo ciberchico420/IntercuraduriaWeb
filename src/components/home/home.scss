@@ -1,0 +1,20 @@
+@import '../main.scss';
+
+$radCursos:30vw;
+.cursosButton {
+  
+    font-size: 5vw;
+    color: $mainColor;
+    bottom: 3vw;
+    left:3vw;
+    transform-origin: center;
+}
+.nosotrasButton {
+  
+    font-size: 1.5vw;
+    color: white;
+    right: 4vw;
+    top:5vw;
+    transform-origin: center;
+    border:3px solid white;
+}

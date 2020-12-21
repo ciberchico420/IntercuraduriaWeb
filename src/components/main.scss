@@ -1,0 +1,31 @@
+$mainColor:#5934E0;
+
+.logo {
+    position: absolute;
+    left: 0.5%;
+    top: 0.5%;
+    z-index: 1000;
+    background-image: url("../assets/img/logo.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 30%;
+    height: 10%;
+}
+
+.circle {
+    background-color: $mainColor;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100%;
+    text-align: center;
+    display: flex;
+    position: absolute;
+}
+.empty{
+    background-color: white;
+    border: 3px solid $mainColor;
+}
+.circle-text{
+    color: white;
+    font-size: large;
+}
