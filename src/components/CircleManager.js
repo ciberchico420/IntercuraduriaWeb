@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import Circle from './Circle';
+import './main.scss'
 
 function getRandom(min, max) {
     return Math.random() * (max - min) + min;
@@ -10,6 +11,7 @@ function CircleManager(props) {
     var active = true;
     var maxCircles = getRandom(6,12);
     var arr = {}
+    
     if(active){
        for (var a = 0; a < maxCircles; a++) {
         var randX = getRandom(0,(window.innerWidth));
@@ -25,7 +27,7 @@ function CircleManager(props) {
     })
     
     return (
-        <div>
+        <div className="circleManager">
             {Object.keys(arr).map(function(key) {
                 return <Circle importance={arr[key].importance} position={arr[key].position} isEmpty={arr[key].isEmpty} key={key}></Circle>
             })}

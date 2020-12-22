@@ -1,20 +1,28 @@
 @import '../main.scss';
 
 $radCursos:30vw;
+$radNosotras:15vw;
 .cursosButton {
-  
+    height: $radCursos;
+    width: $radCursos;
     font-size: 5vw;
     color: $mainColor;
-    bottom: 3vw;
-    left:3vw;
     transform-origin: center;
 }
 .nosotrasButton {
-  
+    height: $radNosotras;
+    width: $radNosotras;
     font-size: 1.5vw;
     color: white;
     right: 4vw;
     top:5vw;
     transform-origin: center;
     border:3px solid white;
+}
+
+.cursosContainer{
+    padding: 5vw;
+    font-size: 12px;
+    background-color: white;
+    border: 1px solid black;
 }
