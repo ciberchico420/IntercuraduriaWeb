@@ -1,11 +1,16 @@
 import React, { useEffect, useState } from 'react'
 import './main.scss'
 import { useSpring, animated, config } from 'react-spring'
+import {useLocation,useHistory} from 'react-router-dom'
 
 function ButtonCircle(props) {
     const [open, setOpen] = useState(false);
     const [fullyopen, setFullyOpen] = useState(false);
     var className = "circle " + props.className;
+    const location = useLocation();
+    const history = useHistory();
+    console.log(location)
+
 
     const plus = 1.1;
     const onMouseOver = (e) => {
@@ -18,16 +23,22 @@ function ButtonCircle(props) {
         setScale({ scale: 1 })
     }
     const onClick = (e) => {
-        if (!open) {
+         if (!open) {
             setOpen(true);
-            setFullyOpen(false);
-        }
-
+            history.push(`/${props.section}`)
+         }else{
+             setOpen(false);
+             setFullyOpen(false)
+            history.push("/")
+         }
+        
     }
 
     useEffect(() => {
         setScale({ scale: 1 });
-
+        if(location.pathname === `/${props.section}`){
+            setOpen(true);
+        }
     })
 
     const trans = (s) => `perspective(600px) scale(${s})`
@@ -47,16 +58,17 @@ function ButtonCircle(props) {
     const openSpring = useSpring({
         to: async (next) => {
             if (open) {
-
-                await next({ left: 0, top: 0, borderRadius: 0 + "px", height: 100, opacityLabel: 0,  })
-                await setFullyOpen(true);
-                await next({ width: 100, border: 0,opacityContent: 1 })
-               
+                await next({ left: 0, top: 0,height:100,width:100,borderRadius: 0 + "px"})
+                await next({  opacityLabel: 0,opacityContent: 0,config:{duration:500,...config.stiff} })
+                setFullyOpen(true);
+                await next({ left: 0, top: 0, height: 100,width:100,  border: 0 ,config:{duration:300,...config.stiff}})
+                await next({opacityContent: 1})
+              
             } else {
                 await next({ ...defaultStyle })
             }
 
-        }, from: { ...defaultStyle }, config: { velocity: 1, ...config.wobbly }
+        }, from: { ...defaultStyle }, config: {  ...config.stiff }
     })
 
 
@@ -69,13 +81,14 @@ function ButtonCircle(props) {
         borderRadius: openSpring.borderRadius.interpolate((s) => `${s}`),
         width: openSpring.width.interpolate((s) => `${s}${signoSize}`),
         height: openSpring.height.interpolate((s) => `${s}${signoSize}`),
-        borderWidth: openSpring.border,
-        zIndex: open ? 99 : "auto"
+        borderWidth: open?0:3,
+        zIndex: open ? 99 : "auto",
+        backgroundColor: fullyopen ? "white" : (props.empty ? "white" : "#5934E0")
     }
 
 
     return (<animated.div native className={className} onMouseOver={onMouseOver} onClick={onClick} onMouseLeave={onMouseLeave} style={style}>
-        {!fullyopen?<animated.div style={{ opacity: openSpring.opacityLabel }}>{props.buttonText}</animated.div>:undefined}
+        {!fullyopen ? <animated.div style={{ opacity: openSpring.opacityLabel }}>{props.buttonText}</animated.div> : undefined}
         {fullyopen ? <animated.div style={{ opacity: openSpring.opacityContent }}>{props.children}</animated.div> : undefined}
     </animated.div>)
 }

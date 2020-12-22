@@ -2,27 +2,36 @@
 
 $radCursos:30vw;
 $radNosotras:15vw;
+
 .cursosButton {
     height: $radCursos;
     width: $radCursos;
     font-size: 5vw;
     color: $mainColor;
     transform-origin: center;
+    border: 1px solid $mainColor
 }
+
 .nosotrasButton {
     height: $radNosotras;
     width: $radNosotras;
     font-size: 1.5vw;
     color: white;
     right: 4vw;
-    top:5vw;
+    top: 5vw;
     transform-origin: center;
-    border:3px solid white;
+    border: 3px solid white;
 }
 
-.cursosContainer{
+.cursosContainer {
     padding: 5vw;
-    font-size: 12px;
-    background-color: white;
-    border: 1px solid black;
+    font-size: 3vh;
+    background-color: rgba(255, 255, 255, 1);
+    text-align: left;
+    position: absolute;
+    width: 100vw;
+    min-height: 100vh;
+    top: 0;
+    left: 0;
+    color: $mainColor;
 }
