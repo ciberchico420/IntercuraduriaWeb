@@ -7,7 +7,7 @@ export default function PageFromCategory(props) {
     const [isLoaded, setIsLoaded] = useState(false);
     const [items, setItems] = useState([]);
     useEffect(() => {
-        fetch("http://drokt.com/blog/wp-json/wp/v2/posts")
+        fetch("http://drokt.com/blog/wp-json/wp/v2/posts?categories="+props.category)
             .then(res => res.json())
             .then(
                 (result) => {
