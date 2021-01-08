@@ -9,7 +9,7 @@ function getRandom(min, max) {
 
 function CircleManager(props) {
     var active = true;
-    var maxCircles = getRandom(6,12);
+    var maxCircles = 4
     var arr = {}
     
     if(active){

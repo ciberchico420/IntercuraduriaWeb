@@ -1,20 +1,8 @@
 import React from 'react'
 import './main.scss'
 
-/*class Logo extends React.Component {
-    render() {
-
-        return (
-            <div>
-                <img src={logo} alt="logo" className="logo"></img>
-            </div>
-        )
-
-    }
-}*/
-
 function Logo(){
-return (<div className="logo"></div>)
+return (<div className="logo"><span>INTER</span><span>CURADURIA</span></div>)
 }
 
 export default Logo;

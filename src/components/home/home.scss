@@ -1,37 +1,133 @@
 @import '../main.scss';
 
-$radCursos:30vw;
-$radNosotras:15vw;
+.logo {
+    z-index: 100;
+    color: black;
+    user-select: none;
 
-.cursosButton {
-    height: $radCursos;
-    width: $radCursos;
-    font-size: 5vw;
-    color: $mainColor;
-    transform-origin: center;
-    border: 1px solid $mainColor
+    & span {
+        font-size: 6vh;
+        font-family: Heebo;
+
+        &:first-child {
+            color: $mainColor;
+        }
+    }
+
 }
 
-.nosotrasButton {
-    height: $radNosotras;
-    width: $radNosotras;
-    font-size: 1.5vw;
-    color: white;
-    right: 4vw;
-    top: 5vw;
-    transform-origin: center;
-    border: 3px solid white;
+
+.homeContainer {
+    display: grid;
+    grid-template-columns: 1fr 4fr 1fr;
+    grid-template-rows: 1fr 4fr 1fr;
+    height: 100vh;
+    background: transparent;
 }
 
-.cursosContainer {
-    padding: 5vw;
-    font-size: 3vh;
-    background-color: rgba(255, 255, 255, 1);
-    text-align: left;
-    position: absolute;
-    width: 100vw;
-    min-height: 100vh;
-    top: 0;
-    left: 0;
-    color: $mainColor;
+.menuContainer {
+    display: flex;
+    margin: 3px;
+}
+
+.menu {
+    grid-row: 2;
+    grid-column: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    user-select: none;
+}
+
+.menuItem {
+    z-index: 1000;
+    padding: 2vw;
+}
+
+.menuItem button {
+    border: none;
+    background-color: transparent;
+    padding: 0;
+    font-family: Heebo;
+    font-size: $subMenuFontSize+vh;
+    color: $secondaryColor;
+
+    &:focus {
+        border: none;
+        outline: none;
+    }
+}
+
+.menuItemLine {
+    background-color: $mainColor;
+    width: 0%;
+    height: 4px;
+    user-select: none;
+}
+
+.subMenu {
+    background-color: $mainColor;
+    border: 1px solid $mainColor;
+    overflow: hidden;
+    height: 0%;
+    margin-bottom: -2vw;
+
+    & ul {
+        height: 0%;
+        margin: 0;
+        padding: 0;
+    }
+
+    & li {
+        list-style-type: none;
+        padding: 10px;
+        color: $mainColor;
+        background-color: white;
+        transition: padding .5s;
+        font-size: 2vh;
+        cursor: pointer;
+
+        &:hover {
+            padding: 20px;
+        }
+    }
+
+
+}
+
+.sideMenu {
+    grid-row: 1;
+    grid-column: 3;
+    display: flex;
+    justify-content: space-evenly;
+    margin-right: 15%;
+
+    & div {
+        color: $mainColor;
+        font-size: 2.5vh;
+        user-select: none;
+    }
+}
+
+.sideMenuItem {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-grow: 1;
+    transition: background-color .4s, color .4s;
+    align-content: space-between;
+    margin-bottom: 20%;
+    user-select: none;
+    padding: 10px;
+    cursor: pointer;
+
+    &:hover {
+        background-color: $mainColor;
+        color: white;
+    }
+
+    &:first-child {
+        margin-right: 10px;
+    }
 }

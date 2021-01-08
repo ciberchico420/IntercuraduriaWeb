@@ -1,0 +1,13 @@
+$mainColor:#4c56ac;
+$secondaryColor:#7f7eaa;
+$subMenuFontSize:3;
+$subMenuFontSizeHover:$subMenuFontSize+.3;
+$subMenuFontSizeClick:$subMenuFontSize+.5;
+
+:export{
+    mainColor:$mainColor;
+    secondaryColor:$secondaryColor;
+    subMenuFontSize:$subMenuFontSize;
+    subMenuFontSizeHover:$subMenuFontSizeHover;
+    subMenuFontSizeClick:$subMenuFontSizeClick;
+}

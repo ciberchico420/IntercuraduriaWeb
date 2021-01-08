@@ -1,32 +1,32 @@
-$mainColor:#5934E0;
+@import './exports.module.scss';
 
-.logo {
-    position: absolute;
-    left: 0.5%;
-    top: 0.5%;
-    z-index: 1000;
-    background-image: url("../assets/img/logo.png");
-    background-repeat: no-repeat;
-    background-size: contain;
-    width: 30%;
-    height: 10%;
-}
+
+@font-face {
+    font-family: Heebo;
+    src: url(../fonts/Heebo.ttf) format('truetype');
+  }
+  body,html{
+      left:0;
+      top:0;
+      margin:0;
+  }
 .circleManager{
     position: fixed;
-    border:1px solid black;
+    height: 100vh;
+    width: 100vw;
+    top:0;
+    left: 0;
+    z-index: -30;
+    overflow: hidden;
 }
 .circle {
-    background-color: $mainColor;
     justify-content: center;
     align-items: center;
     border-radius: 100%;
     text-align: center;
     display: flex;
     position: absolute;
-}
-.empty{
-    background-color: white;
-    border: 3px solid $mainColor;
+    border: 3px solid #f3ebfa;
 }
 .circle-text{
     color: white;
