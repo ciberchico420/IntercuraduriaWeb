@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from 'react'
 import './content.scss'
 import ReactHtmlParser from 'react-html-parser';
 import { useSpring, animated } from 'react-spring';
+import './CategoryStyle.scss'
 
 
 export default function PageFromCategory(props) {
@@ -37,10 +38,10 @@ export default function PageFromCategory(props) {
         script2.href = "http://drokt.com/wordpress/wp-content/themes/hello-elementor/style.min.css?ver=2.3.1";
         script2.async = true;
         script2.rel = "stylesheet"
-        document.body.appendChild(script2);
+       // document.body.appendChild(script2);
       return () => {
           document.body.removeChild(script);
-          document.body.removeChild(script2);
+          //document.body.removeChild(script2);
         }
       }, []);
     return (<div className="contentContainer" style={{height:props.showContent?"100%":0}} ref={contentRef}>{items.map(value => {

@@ -14,6 +14,7 @@
 
 .contentContainer {
     overflow: hidden;
+    padding: 3vw;
 }
 
 .contentContainer * {
@@ -24,7 +25,7 @@
 .closeContent {
     position: absolute;
     right: 1%;
-    top: 1%;
+    top: 10px;
     font-size: 2vw;
     cursor: pointer;
     color: white;
