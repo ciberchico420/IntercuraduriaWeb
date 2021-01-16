@@ -1,5 +1,6 @@
 $mainColor:#4c56ac;
 $secondaryColor:#7f7eaa;
+$darkenColor:#2a2357;
 $subMenuFontSize:3;
 $subMenuFontSizeHover:$subMenuFontSize+.3;
 $subMenuFontSizeClick:$subMenuFontSize+.5;
@@ -10,4 +11,5 @@ $subMenuFontSizeClick:$subMenuFontSize+.5;
     subMenuFontSize:$subMenuFontSize;
     subMenuFontSizeHover:$subMenuFontSizeHover;
     subMenuFontSizeClick:$subMenuFontSizeClick;
+    darkenColor:$darkenColor;
 }

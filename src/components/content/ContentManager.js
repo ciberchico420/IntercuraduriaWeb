@@ -29,7 +29,6 @@ export default function ContentManager(props) {
         pages.forEach(val => {
             if (location.pathname === val.path) {
                 setInPage(true);
-                console.log("si", inPage)
             }else{
                 setInPage(false)
                 setShowContent(false)
@@ -56,8 +55,11 @@ export default function ContentManager(props) {
         },
         
     })
+    const goToHome = ()=>{
+        history.push("/")
+    }
     return (<animated.div className="content" style={spring}>
-        <div className="closeContent" onClick={()=>{history.push("/")}}><RiEyeCloseFill/><RiCloseLine/></div>
+       {inPage&&<div className="closeContent" onClick={goToHome}><RiEyeCloseFill/><RiCloseLine/></div>}
         {pages.map(val => {
             return (
                 <Route path={val.path} key={val.path}>

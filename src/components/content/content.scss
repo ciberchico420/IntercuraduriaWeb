@@ -6,15 +6,16 @@
     top: 0;
     background-color: transparent;
     z-index: 1000;
-    margin-top: 0;
-    margin-bottom: 0;
+    margin: 0;
+    padding: 0;
     background-color: $mainColor;
     overflow: hidden;
 }
 
 .contentContainer {
     overflow: hidden;
-    padding: 3vw;
+    padding: 0px;
+    transition: height .3s;
 }
 
 .contentContainer * {
@@ -23,16 +24,18 @@
 }
 
 .closeContent {
-    position: absolute;
-    right: 1%;
-    top: 10px;
-    font-size: 2vw;
+    position: fixed;
+    right: 15px;
+    top: 15px;
+    font-size: 2rem;
     cursor: pointer;
     color: white;
     user-select: none;
-    border-radius: 10px;
-    padding: 2vh;
-
+    border-radius: 30px;
+    padding: 10px;
+    background-color: $mainColor;
+    box-shadow: 0px 10px rgba(0, 0, 0, 0.144);
+    border: 2px solid #000;
     &:hover {
         background-color: white;
         color:$mainColor;

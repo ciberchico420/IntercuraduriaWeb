@@ -1,5 +1,58 @@
+@import '../exports.module.scss';
 #site-content{
+   border:1px solid black;
+   background-color: white;
+   padding: 1vh;
+   margin: 10px;
+   & article{
+       width: 100%;
+       
+   }
+    & .entry-title{
+       font-size: 4rem;
+       text-overflow: ellipsis;
+       overflow: hidden;
+       min-width: .4fr;
+    }
+    & .entry-header{
+        display: grid;
+        grid-template-columns: 2fr 1fr;
 
+        @media screen and (max-width:800px) {
+            grid-template-columns: 1fr;
+        }
+        & div{
+            text-overflow: ellipsis;
+        }
+        & .info{
+            border:1px solid rgba(0, 0, 0, 0.123);
+            padding: 10px;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+            margin: 30px;
+            & .date{
+                color:$secondaryColor;
+            }
+            & .author{
+                font-size: large;
+                & span{
+                    font-weight: bolder;
+                    color: $mainColor;
+                }
+            }
+            
+        }
+    }
+    & .wp-block-button a{
+        padding: 10px;
+    }
+    & .wp-block figcaption{
+        border-bottom: none;
+        color: white;
+    }
     & *,
     :after,
     :before {
@@ -19,7 +72,9 @@
         font-family: inherit;
         font-weight: 500;
         line-height: 1.2;
-        color: inherit
+        color: inherit;
+        text-decoration: underline;
+        
     }
 
     & h1 {
@@ -67,12 +122,18 @@
     & a {
         background-color: transparent;
         text-decoration: none;
-        color: #c36
+        background: white;
+        padding: 2px;
+        font-weight: bold;
+        color: $darkenColor
     }
 
     & a:active,
     a:hover {
-        color: #336
+        color: white;
+        background-color: $darkenColor;
+        
+        
     }
 
     & a:not([href]):not([tabindex]),
@@ -128,7 +189,13 @@
     & img {
         border-style: none;
         height: auto;
-        max-width: 100%
+        max-width: 100%;
+        border-radius: 10px;
+        transition: transform .2s;
+        &:hover{
+            box-shadow: 0px 10px 20px 0px #00000062;
+            transform:translate(0,-10px);
+        }
     }
 
     & details {
@@ -351,7 +418,8 @@
         margin-bottom: 15px;
         font-size: .9em;
         border-spacing: 0;
-        border-collapse: collapse
+        border-collapse: collapse;
+
     }
 
     & table td,
@@ -359,16 +427,18 @@
         padding: 15px;
         line-height: 1.5;
         vertical-align: top;
-        border: 1px solid #ccc
+        border: 1px solid $darkenColor;
     }
 
     & table th {
-        font-weight: 700
+        font-weight: 700;
+        
     }
 
     & table tfoot th,
     table thead th {
-        font-size: 1em
+        font-size: 1em;
+
     }
 
     & table caption+thead tr:first-child td,
@@ -377,12 +447,13 @@
     table colgroup+thead tr:first-child th,
     table thead:first-child tr:first-child td,
     table thead:first-child tr:first-child th {
-        border-top: 1px solid #ccc
+        border-top: 1px solid #ccc;
+        
     }
 
     & table tbody>tr:nth-child(odd)>td,
     table tbody>tr:nth-child(odd)>th {
-        background-color: #f7f7f7
+        background-color: $secondaryColor
     }
 
     & table tbody+tbody {

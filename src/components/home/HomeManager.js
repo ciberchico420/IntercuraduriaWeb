@@ -31,8 +31,6 @@ function HomeManager(props) {
                     { name: "Cursos" },
                     { name: "Talleres" },
                     { name: "Seminarios" },
-                    { name: "Seminarios2" },
-                    { name: "Seminarios3" },
                 ]
                 }>Programas
                 </MenuItem>
@@ -50,7 +48,7 @@ function HomeManager(props) {
 }
 function MenuItem(props) {
     const [toggle, setToggle] = useState(false);
-    const [click, setClick] = useState(false);
+
     const fontSize = Colors.subMenuFontSize;
 
     let history = useHistory();
@@ -61,36 +59,35 @@ function MenuItem(props) {
             await next({
                 opacity: toggle ? 1 : 0,
                 width: toggle ? "100%" : "0%",
-                fontSize: click ? (Colors.subMenuFontSizeClick) + "vh" : fontSize + "vh",
+
                 fontColor: toggle ? Colors.mainColor : Colors.secondaryColor,
-                submenuHeight: "0%"
+                submenuHeight: "scale(1,0)",
             })
 
-            await next({ submenuHeight: (toggle || click) ? "100%" : "0%" })
+            await next({ submenuHeight: (toggle) ? "scale(1,1)" : "scale(1,0)" })
 
 
         }
     })
+
     return (
-        <animated.div className="menuItem" onMouseOver={() => { setToggle(true) }} onMouseLeave={() => { setToggle(false); setClick(false) }} onClick={
+        <animated.div className={(props.submenu !== undefined)?"menuItem has-submenu":"menuItem"} onMouseOver={() => { setToggle(true) }} onMouseLeave={() => { setToggle(false); }} onClick={
             () => { 
-                setClick(true);  
+
                 if(props.link !== undefined){
                     history.push(props.link)
-                    
                 }
             }
             }>
-            <animated.button className="menuItemButton"
-                style={{ fontSize: spring.fontSize, color: spring.fontColor }}>
+            <animated.button>
                 {props.children}
 
             </animated.button>
             {props.submenu !== undefined&&<IoIosArrowDropdownCircle  color={Colors.mainColor} style={{marginLeft:5}}/>}
             <animated.div className="menuItemLine" style={spring}></animated.div>
 
-            {props.submenu!== undefined&&<animated.div className="subMenu" style={{height: spring.submenuHeight }}>
-                <animated.ul style={{height: spring.submenuHeight}}>
+            {props.submenu!== undefined&&<animated.div className="subMenu" style={{transform: spring.submenuHeight}}>
+                <animated.ul>
                     {props.submenu !== undefined && props.submenu.map((val) => {
 
                         return <li key={val.name}>
