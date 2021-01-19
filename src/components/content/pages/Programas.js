@@ -39,7 +39,7 @@ export default function Programas(props) {
                 }
             )
     }, [props.category])
-    return (<div><h1 className="titlePrograma"><span>Programa #{props.type}</span></h1>
+    return (<div><h1 className="titlePrograma"><span>#{props.type}</span></h1>
         <div className="infoPrograma">
             <div className="activos-moto">
                 <span><RiEditCircleFill className="icon"></RiEditCircleFill></span>
@@ -87,6 +87,7 @@ function ProgramaItem(props) {
             }
         }else{
             setOpen(false) 
+            setRegistering(false)
         }
     },[pathArr,setOpen,props.item.id])
     const onRegister = () => {
