@@ -9,32 +9,26 @@ import {
     useHistory,
     useLocation
 } from "react-router-dom";
-import PageFromCategory from './PageFromCategory';
+import PageFromCategory from './pages/Textos';
+import DRoute from './DRoute'
+import Programas from './pages/Programas'
 import {RiEyeCloseFill,RiCloseLine} from 'react-icons/ri'
 
 
 export default function ContentManager(props) {
     const location = useLocation()
-    console.log(location)
+
     const [showContent, setShowContent] = useState(false);
     const [inPage, setInPage] = useState(false);
-    const pages = [
-        { path: "/textos", child: <PageFromCategory category="2" showContent={showContent} /> }
-    ]
     
 
 
 
     useEffect(() => {
-        pages.forEach(val => {
-            if (location.pathname === val.path) {
-                setInPage(true);
-            }else{
-                setInPage(false)
-                setShowContent(false)
-            }
-        })
-    })
+        if(location.pathname === "/"){
+            closePage();
+        }
+    },[location.pathname])
 
     const history = useHistory()
 
@@ -58,17 +52,21 @@ export default function ContentManager(props) {
     const goToHome = ()=>{
         history.push("/")
     }
-    return (<animated.div className="content" style={spring}>
+    const openPage = ()=>{
+        setInPage(true)
+       // setShowContent(true);
+    }
+    const closePage = ()=>{
+        setInPage(false)
+        setShowContent(false);
+    }
+    return (<animated.div className={"content"} style={spring}>
        {inPage&&<div className="closeContent" onClick={goToHome}><RiEyeCloseFill/><RiCloseLine/></div>}
-        {pages.map(val => {
-            return (
-                <Route path={val.path} key={val.path}>
-                    {val.child}
-                </Route>
-            );
 
-        })}
-
+                <DRoute open={openPage} showContent={showContent} path={"/textos"} child={   <PageFromCategory category="2"/>}>
+                </DRoute>
+                <DRoute open={openPage} showContent={showContent} path={"/cursos"} child={   <Programas category="3" type="Cursos"></Programas>}>
+                </DRoute>
 
     </animated.div>)
 }

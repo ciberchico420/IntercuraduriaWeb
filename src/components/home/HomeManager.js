@@ -3,8 +3,7 @@ import { Route, Switch, useHistory } from 'react-router-dom';
 import ButtonCircle from '../ButtonCircle';
 import '../main.scss'
 import './home.scss'
-import PageFromCategory from '../content/PageFromCategory';
-import { useMediaQuery } from 'react-responsive'
+import PageFromCategory from '../content/pages/Textos';
 import { useSpring, animated, config } from 'react-spring'
 
 import Colors from '../exports.module.scss'
@@ -12,9 +11,6 @@ import { IoIosArrowDropdownCircle,IoIosMail} from 'react-icons/io';
 import { GiSwordwoman} from 'react-icons/gi';
 
 function HomeManager(props) {
-
-    const isPortrait = useMediaQuery({ query: '(min-width: 600px)' })
-
 
     return (<div className="homeContainer">
         <div className="sideMenu">
@@ -28,9 +24,9 @@ function HomeManager(props) {
             <div className="logo"><span>INTER</span><span>CURADURIA</span></div>
             <div className="menuContainer">
                 <MenuItem submenu={[
-                    { name: "Cursos" },
-                    { name: "Talleres" },
-                    { name: "Seminarios" },
+                    { name: "Cursos",link:"/cursos" },
+                    { name: "Talleres",link:"/talleres"  },
+                    { name: "Seminarios",link:"/seminarios"  },
                 ]
                 }>Programas
                 </MenuItem>
@@ -70,6 +66,7 @@ function MenuItem(props) {
         }
     })
 
+
     return (
         <animated.div className={(props.submenu !== undefined)?"menuItem has-submenu":"menuItem"} onMouseOver={() => { setToggle(true) }} onMouseLeave={() => { setToggle(false); }} onClick={
             () => { 
@@ -90,7 +87,11 @@ function MenuItem(props) {
                 <animated.ul>
                     {props.submenu !== undefined && props.submenu.map((val) => {
 
-                        return <li key={val.name}>
+                        return <li key={val.name} onClick={()=>{
+                            if(val.link !== undefined){
+                                history.push(val.link)
+                            }
+                        }}>
                             {val.name}
                         </li>
                     })}

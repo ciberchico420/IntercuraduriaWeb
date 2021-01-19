@@ -12,17 +12,6 @@
     overflow: hidden;
 }
 
-.contentContainer {
-    overflow: hidden;
-    padding: 0px;
-    transition: height .3s;
-}
-
-.contentContainer * {
-    margin-top: 0;
-    margin-bottom: 0;
-}
-
 .closeContent {
     position: fixed;
     right: 15px;
