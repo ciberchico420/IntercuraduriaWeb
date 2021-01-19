@@ -7,16 +7,14 @@ import {
     useLocation
 } from "react-router-dom";
 
-export default function DRoute(props){
+export default function DRoute(props) {
     const [inPage,setInPage] = useState(false);
     
     const location = useLocation();
-   /*if( location.pathname === props.path){
-       setInPage(true);
-   }*/
+   const pathArr = location.pathname.split("/");
 
    useEffect(()=>{
-    if( location.pathname === props.path){
+    if( location.pathname.includes(props.path)){
         setInPage(true);
         props.open()
     }else{

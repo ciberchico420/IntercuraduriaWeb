@@ -12,7 +12,7 @@ import {
 import PageFromCategory from './pages/Textos';
 import DRoute from './DRoute'
 import Programas from './pages/Programas'
-import {RiEyeCloseFill,RiCloseLine} from 'react-icons/ri'
+import { RiEyeCloseFill, RiCloseLine } from 'react-icons/ri'
 
 
 export default function ContentManager(props) {
@@ -20,53 +20,52 @@ export default function ContentManager(props) {
 
     const [showContent, setShowContent] = useState(false);
     const [inPage, setInPage] = useState(false);
-    
+
 
 
 
     useEffect(() => {
-        if(location.pathname === "/"){
+        if (location.pathname === "/") {
             closePage();
         }
-    },[location.pathname])
+    }, [location.pathname])
 
     const history = useHistory()
 
     useEffect(() => {
-       return history.listen((location) => { 
-          console.log(`You changed the page to: ${location.pathname}`) 
-         
-       }) 
-    },[history]) 
+        return history.listen((location) => {
+            console.log(`You changed the page to: ${location.pathname}`)
+
+        })
+    }, [history])
 
     const spring = useSpring({
         to: async (next) => {
             var text = inPage ? "0%" : "50%";
-            await next({minHeight:inPage?"100%":"0%" })
-            await next({ transform: "translate(0px," + text + ")"})
-            
+            await next({ minHeight: inPage ? "100%" : "0%" })
+            await next({ transform: "translate(0px," + text + ")" })
+
             setShowContent(inPage);
         },
-        
+
     })
-    const goToHome = ()=>{
+    const goToHome = () => {
         history.push("/")
     }
-    const openPage = ()=>{
+    const openPage = () => {
         setInPage(true)
-       // setShowContent(true);
+        // setShowContent(true);
     }
-    const closePage = ()=>{
+    const closePage = () => {
         setInPage(false)
         setShowContent(false);
     }
     return (<animated.div className={"content"} style={spring}>
-       {inPage&&<div className="closeContent" onClick={goToHome}><RiEyeCloseFill/><RiCloseLine/></div>}
-
-                <DRoute open={openPage} showContent={showContent} path={"/textos"} child={   <PageFromCategory category="2"/>}>
-                </DRoute>
-                <DRoute open={openPage} showContent={showContent} path={"/cursos"} child={   <Programas category="3" type="Cursos"></Programas>}>
-                </DRoute>
+        {inPage && <div className="closeContent" onClick={goToHome}><RiEyeCloseFill /><RiCloseLine /></div>}
+            <DRoute open={openPage} showContent={showContent} path={"/textos"} child={<PageFromCategory category="2" />}>
+            </DRoute>
+            <DRoute open={openPage} showContent={showContent} path={"/cursos"} child={<Programas category="3" type="Cursos"></Programas>}>
+            </DRoute>
 
     </animated.div>)
 }
