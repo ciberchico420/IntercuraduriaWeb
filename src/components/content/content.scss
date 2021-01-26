@@ -30,3 +30,12 @@
         color:$mainColor;
     }
 }
+#sideContentManager{
+    background-color: #40c784;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 800px;
+    height: 100%;
+    z-index: 999;
+}

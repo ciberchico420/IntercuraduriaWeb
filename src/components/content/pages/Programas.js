@@ -7,15 +7,18 @@ import {
     useLocation
 } from "react-router-dom";
 
+import {FaSadTear} from "react-icons/fa"
+
 export default function Programas(props) {
     const [activos, setActivos] = useState([]);
     const [inactivos, setInactivos] = useState([]);
     const [error, setError] = useState(null);
     const [isLoaded, setIsLoaded] = useState(false);
-    const activeCategory = 4;
+    const activeCategory = 5;
+    const sitio = "http://drokt.com/wordpress"
 
     useEffect(() => {
-        fetch("http://drokt.com/wordpress/wp-json/wp/v2/posts?categories=" + props.category + "&_embed")
+        fetch(sitio+"/wp-json/wp/v2/posts?categories=" + props.category + "&_embed")
             .then(res => res.json())
             .then(
                 (result) => {
@@ -48,9 +51,9 @@ export default function Programas(props) {
         </div>
         <div className="category">
 
-            {activos.map((a) => {
+            {activos.length > 0?activos.map((a) => {
                 return (<ProgramaItem key={a.id} type={props.type.toLowerCase()} item={a}></ProgramaItem>)
-            })}
+            }):<div className="no-items">Por el momento no contamos con ningún programa activo <FaSadTear/>.</div>}
         </div>
         <div className="category">
 
@@ -82,7 +85,8 @@ function ProgramaItem(props) {
     useEffect(()=>{
         if(pathArr[2]==props.item.id){
             setOpen(true)
-            if(pathArr[3]=="suscribe" && !props.inactivo === undefined){
+            console.log(pathArr)
+            if(pathArr[3]== "suscribe" && props.inactivo === undefined){
                 setRegistering(true);
             }
         }else{
@@ -142,7 +146,7 @@ function Registering(props) {
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(datos)
             };
-            fetch('http://localhost:3080/api/register', requestOptions)
+            fetch('http://drokt.com:3080/api/register', requestOptions)
                 .then(response => response.json())
                 .then(data => console.log(data));
 

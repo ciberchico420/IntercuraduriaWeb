@@ -14,8 +14,8 @@ function HomeManager(props) {
 
     return (<div className="homeContainer">
         <div className="sideMenu">
-            <SideMenuItem>Nosotras <GiSwordwoman/></SideMenuItem>
-            <SideMenuItem>Contacto <IoIosMail/></SideMenuItem>
+            <SideMenuItem path="/nosotras">Nosotras <GiSwordwoman/></SideMenuItem>
+            <SideMenuItem path="/contacto">Contacto <IoIosMail/></SideMenuItem>
 
 
         </div>
@@ -72,6 +72,7 @@ function MenuItem(props) {
             () => { 
 
                 if(props.link !== undefined){
+                    history.push("/")
                     history.push(props.link)
                 }
             }
@@ -105,7 +106,10 @@ function MenuItem(props) {
 }
 
 function SideMenuItem(props) {
-    return (<div className="sideMenuItem">
+    const history = useHistory();
+    return (<div className="sideMenuItem" onClick={()=>{
+        history.push(props.path)
+    }}>
         {props.children}
     </div>)
 }

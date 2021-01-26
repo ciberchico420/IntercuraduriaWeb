@@ -62,9 +62,13 @@ export default function ContentManager(props) {
     }
     return (<animated.div className={"content"} style={spring}>
         {inPage && <div className="closeContent" onClick={goToHome}><RiEyeCloseFill /><RiCloseLine /></div>}
-            <DRoute open={openPage} showContent={showContent} path={"/textos"} child={<PageFromCategory category="2" />}>
+            <DRoute open={openPage} showContent={showContent} path={"/textos"} child={<PageFromCategory category="6" />}>
             </DRoute>
-            <DRoute open={openPage} showContent={showContent} path={"/cursos"} child={<Programas category="3" type="Cursos"></Programas>}>
+            <DRoute open={openPage} showContent={showContent} path={"/cursos"} child={<Programas category="2" type="Cursos"></Programas>}>
+            </DRoute>
+            <DRoute open={openPage} showContent={showContent} path={"/talleres"} child={<Programas category="3" type="Talleres"></Programas>}>
+            </DRoute>
+            <DRoute open={openPage} showContent={showContent} path={"/seminarios"} child={<Programas category="4" type="Seminarios"></Programas>}>
             </DRoute>
 
     </animated.div>)

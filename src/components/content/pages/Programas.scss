@@ -104,6 +104,16 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center; 
+    & .no-items{
+        font-size: 2rem;
+        background-color: white;
+        padding: 10px;
+        font-weight: bold;
+        margin-top: 50px;
+        & svg{
+            color: rgb(36, 177, 123);
+        }
+    }
 }
 .registerContainer{
     display: flex;

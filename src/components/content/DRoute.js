@@ -11,7 +11,6 @@ export default function DRoute(props) {
     const [inPage,setInPage] = useState(false);
     
     const location = useLocation();
-   const pathArr = location.pathname.split("/");
 
    useEffect(()=>{
     if( location.pathname.includes(props.path)){
