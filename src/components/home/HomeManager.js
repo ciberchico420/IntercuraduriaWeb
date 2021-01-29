@@ -7,15 +7,14 @@ import PageFromCategory from '../content/pages/Textos';
 import { useSpring, animated, config } from 'react-spring'
 
 import Colors from '../exports.module.scss'
-import { IoIosArrowDropdownCircle,IoIosMail} from 'react-icons/io';
-import { GiSwordwoman} from 'react-icons/gi';
+import { RiArrowDropDownLine} from 'react-icons/ri';
 
 function HomeManager(props) {
 
     return (<div className="homeContainer">
         <div className="sideMenu">
-            <SideMenuItem path="/nosotras">Nosotras <GiSwordwoman/></SideMenuItem>
-            <SideMenuItem path="/contacto">Contacto <IoIosMail/></SideMenuItem>
+            <SideMenuItem path="/nosotras">Nosotras</SideMenuItem>
+            <SideMenuItem path="/contacto">Contacto</SideMenuItem>
 
 
         </div>
@@ -81,7 +80,7 @@ function MenuItem(props) {
                 {props.children}
 
             </animated.button>
-            {props.submenu !== undefined&&<IoIosArrowDropdownCircle  color={Colors.mainColor} style={{marginLeft:5}}/>}
+            {props.submenu !== undefined&&<RiArrowDropDownLine  size="25px" color={Colors.mainColor} style={{marginLeft:5}}/>}
             <animated.div className="menuItemLine" style={spring}></animated.div>
 
             {props.submenu!== undefined&&<animated.div className="subMenu" style={{transform: spring.submenuHeight}}>
