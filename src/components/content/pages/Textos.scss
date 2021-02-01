@@ -1,44 +1,50 @@
-.postStyle{
+.postStyle {
     $size: 400px;
     background-color: white;
     overflow: hidden;
-    margin-top: 7px;
-   // transition: height 1s, width 1s, border-radius .2s,min-width .2s;
-    & .flayer-image{
+    margin: 10px;
+    cursor: pointer;
+
+
+   
+    & .flayer-image {
         margin-left: -25%;
         margin-top: -25%;
         transition: filter .2s;
-        &:hover{
 
-        }
     }
 }
-.titulo-header{
+
+
+.titulo-header {
     display: flex;
     align-items: center;
     margin: 60px;
-    & span{
+
+    & span {
         background-color: black;
         color: white;
         font-size: 40px;
         padding: 30px;
         border-radius: 50px;
     }
-    
+
 }
-.post-footer{
+
+.post-footer {
     background-color: black;
 }
-.postsContainer{
+
+.postsContainer {
     display: flex;
-    flex-direction:row;
+    flex-direction: row;
     flex-wrap: wrap;
 
     justify-content: center;
 }
 
-@media screen and (max-width:800px){
-.postStyle{
-    $size:200px;
-}
+@media screen and (max-width:800px) {
+    .postStyle {
+        $size: 200px;
+    }
 }

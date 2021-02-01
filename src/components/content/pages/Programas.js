@@ -14,7 +14,7 @@ export default function Programas(props) {
     const [inactivos, setInactivos] = useState([]);
     const [error, setError] = useState(null);
     const [isLoaded, setIsLoaded] = useState(false);
-    const activeCategory = 5;
+    const inactiveCategory = 5;
     const sitio = "http://drokt.com/wordpress"
 
     useEffect(() => {
@@ -23,15 +23,11 @@ export default function Programas(props) {
             .then(
                 (result) => {
                     var ac = [];
-                    var ina = [];
-                    result.forEach((v) => {
-                        if (v.categories.includes(activeCategory)) {
+                     result.forEach((v) => {
+                       if (!v.categories.includes(inactiveCategory) || inactiveCategory == props.category) {
                             ac.push(v);
-                        } else {
-                            ina.push(v);
                         }
                     })
-                    setInactivos(ina);
                     setActivos(ac);
                     setIsLoaded(true)
                 },
@@ -52,16 +48,9 @@ export default function Programas(props) {
         <div className="category">
 
             {activos.length > 0?activos.map((a) => {
-                return (<ProgramaItem key={a.id} type={props.type.toLowerCase()} item={a}></ProgramaItem>)
+                return (<ProgramaItem key={a.id} inactivo={props.category==inactiveCategory?true:false} type={props.type.toLowerCase()} item={a}></ProgramaItem>)
             }):<div className="no-items">Por el momento no contamos con ningún programa activo <FaSadTear/>.</div>}
         </div>
-        <div className="category">
-
-            {inactivos.map((a) => {
-                return (<ProgramaItem inactivo key={a.id} type={props.type.toLowerCase()} item={a}></ProgramaItem>)
-            })}
-        </div>
-
     </div>)
 }
 function ProgramaItem(props) {
@@ -86,14 +75,14 @@ function ProgramaItem(props) {
         if(pathArr[2]==props.item.id){
             setOpen(true)
             console.log(pathArr)
-            if(pathArr[3]== "suscribe" && props.inactivo === undefined){
+            if(pathArr[3]== "suscribe" && props.inactivo == true){
                 setRegistering(true);
             }
         }else{
             setOpen(false) 
             setRegistering(false)
         }
-    },[pathArr,setOpen,props.item.id])
+    },[pathArr,setOpen,props.item.id,props.inactivo])
     const onRegister = () => {
         setOpen(true)
         setRegistering(true);

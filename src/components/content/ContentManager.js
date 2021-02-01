@@ -13,6 +13,7 @@ import PageFromCategory from './pages/Textos';
 import DRoute from './DRoute'
 import Programas from './pages/Programas'
 import { RiEyeCloseFill, RiCloseLine } from 'react-icons/ri'
+import Archivo from './pages/Archivo';
 
 
 export default function ContentManager(props) {
@@ -70,6 +71,8 @@ export default function ContentManager(props) {
             <DRoute open={openPage} showContent={showContent} path={"/talleres"} child={<Programas category="3" type="Talleres"></Programas>}>
             </DRoute>
             <DRoute open={openPage} showContent={showContent} path={"/seminarios"} child={<Programas category="4" type="Seminarios"></Programas>}>
+            </DRoute>
+            <DRoute open={openPage} showContent={showContent} path={"/archivo"} child={<Programas category="5" type="Archivo"></Programas>}>
             </DRoute>
 
     </animated.div>)

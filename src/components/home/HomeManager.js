@@ -30,7 +30,7 @@ function HomeManager(props) {
                 }>Programas
                 </MenuItem>
                 <MenuItem link="/textos">Textos</MenuItem>
-                <MenuItem>Proyectos</MenuItem>
+                <MenuItem link="/archivo">Archivo</MenuItem>
                 <MenuItem>Eventos</MenuItem>
 
 

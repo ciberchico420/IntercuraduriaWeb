@@ -4,13 +4,15 @@ import { useHistory } from 'react-router-dom';
 import { useSpring, animated } from 'react-spring';
 import './PostStyle.scss'
 import './Textos.scss'
+import Colors from '../../exports.module.scss'
+import {sitio} from '../../c'
 
 
 export default function PageFromCategory(props) {
     const [error, setError] = useState(null);
     const [isLoaded, setIsLoaded] = useState(false);
     const [items, setItems] = useState([]);
-    const sitio = "http://drokt.com/wordpress";
+    //const sitio = c.sitio;
     useEffect(() => {
         fetch(sitio + "/wp-json/wp/v2/posts?categories=" + props.category + "&_embed")
             .then(res => res.json())
@@ -54,6 +56,7 @@ function Post(props) {
     var value = props.value;
     var history = useHistory();
     const [open, setOpen] = useState(false);
+    const [over, setOver] = useState(false);
     var date = new Date(value.date);
     var html = ReactHtmlParser(value.content.rendered);
     console.log(html)
@@ -88,8 +91,9 @@ function Post(props) {
         }
         console.log(args);
     }, [history.location.pathname, open, value.id, history])
-    var size = "400px";
-    return (<div className="postStyle" onClick={!open && openFunc} style={
+    var size = over?"410px":"400px";
+    var imgBg = image !== undefined ? image.props.src : ""
+    return (<div className="postStyle button" onPointerEnter={()=>{setOver(true)}} onPointerLeave={()=>{setOver(false)}} onClick={!open && openFunc} style={
         {
             position: open ? "absolute" : "relative",
             top: "0",
@@ -98,15 +102,19 @@ function Post(props) {
             height: open ? "auto" : size,
             minHeight: open ? "100%" : "auto",
             borderRadius: open ? "0%" : "100%",
+            background:open?"white":"url("+imgBg+")",
+            transition:open?"none":"width 1s, height 1s, border 1s",
+            border:open?"none":!over?"0px solid black":"3px solid black"
+            
 
-        }}>{!open ? <img className="flayer-image" alt="Imagen" src={image !== undefined ? image.props.src : ""}></img> :
+        }}>{!open ? <img className="flayer-image" alt="Imagen" src=""></img> :
             <main id="site-content" className="postStyle" key={value.id}>
                 <article>
                     <header className="entry-header has-text-aling-center"><h2 className="entry-title">{ReactHtmlParser(value.title.rendered)}</h2>
                         <div className="info"><div className="author">Escrito por <span>{value._embedded.author[0].name}</span></div><div className="date">{date.getDay() + "/" + date.getMonth() + "/" + date.getFullYear()}</div></div>
                     </header>
                     <div className="post-inner thin">
-                        {ReactHtmlParser(value.content.rendered)}
+                        {ReactHtmlParser(value.content.rendered).splice(-1,1)}
                     </div>
                 </article></main>}
     </div>)

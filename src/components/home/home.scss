@@ -6,9 +6,9 @@
     user-select: none;
 
     & span {
-        font-size: 6vh;
-        font-family: Heebo;
-
+        font-size: 100px;
+        font-family: Blanch;
+        letter-spacing: 8px;
         &:first-child {
             color: $mainColor;
         }
