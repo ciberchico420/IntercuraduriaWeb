@@ -10,33 +10,103 @@
     padding: 0;
     background-color: rgb(242, 242, 248);
     overflow: hidden;
-   
+
 }
 
-.black-on-top{
+.black-on-top {
     background-color: #000;
     width: 100%;
-    height: 7px;
+
+    height: $topMenuSize;
+    max-height: $topMenuSize;
+
+    //border-bottom-right-radius: 20px;
+    .logo {
+        margin-top: 5px;
+        padding-right: 10px;
+
+        //border-right: 2px solid white;
+        & span {
+            font-size: 35px;
+            color: white;
+
+            &:first-child {
+                color: $mainColor;
+            }
+        }
+    }
+
+    & .menuItem button {
+        color: white;
+        font-size: 20px;
+
+        &:focus {
+            color: white;
+            font-size: 22px;
+        }
+    }
+
+    & .menuItem {
+        padding: 10px;
+        padding-left: 20px;
+
+        & svg {
+            color: white;
+            margin-bottom: -5px;
+        }
+
+    }
+
+    & .menuItemLine {
+        background-color: white;
+    }
+
+    & .subMenu {
+        border: 1px solid black;
+        border-top: none;
+        border-radius: 0 0 30px 30px;
+        background: black;
+
+        & ul {
+            margin-bottom: 20px;
+            background: black;
+           
+        }
+
+        & li {
+            background-color: black;
+            color: white;
+            text-align: center;
+
+            &:hover {
+                background: $mainColor;
+            }
+        }
+
+    }
 }
 
 .closeContent {
-    position: absolute;
+    position: fixed;
     right: 15px;
     top: 0px;
     font-size: 2rem;
     cursor: pointer;
     color: white;
     user-select: none;
-    border-radius:0 0 30px 30px;
-    padding: 10px;
-    padding-top: 20px;
+    border-radius: 0px 0px 30px 30px;
+    padding: 20px;
+    padding-top: 60px;
+    padding-bottom: 10px;
     background-color: black;
+
     &:hover {
-        background-color: white;
-        color:$mainColor;
+        background-color: $mainColor;
+        color: white;
     }
 }
-#sideContentManager{
+
+#sideContentManager {
     background-color: #40c784;
     position: absolute;
     right: 0;
@@ -44,4 +114,31 @@
     width: 800px;
     height: 100%;
     z-index: 999;
+}
+
+
+@media screen and (max-width:800px) {
+    .black-on-top {
+        & .menuContainer {
+            flex-direction: row;
+        }
+
+        & .menuItem button {
+            font-size: 15px;
+        }
+        & .logo{
+            margin-left: -20px;
+            margin-right: 10px;
+            width: 15px;
+            overflow: hidden;
+            & span{
+                margin-left: -1px;
+            }
+        }
+        .closeContent{
+            padding-top: 10px;
+            top:59px;
+        }
+    }
+
 }

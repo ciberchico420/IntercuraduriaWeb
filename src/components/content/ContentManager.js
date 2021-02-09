@@ -14,6 +14,9 @@ import DRoute from './DRoute'
 import Programas from './pages/Programas'
 import { RiEyeCloseFill, RiCloseLine } from 'react-icons/ri'
 import Archivo from './pages/Archivo';
+import HomeManager from '../home/HomeManager';
+
+import {Menu} from '../home/HomeManager'
 
 
 export default function ContentManager(props) {
@@ -63,7 +66,8 @@ export default function ContentManager(props) {
     }
     return (<animated.div className={"content"} style={spring}>
       
-        {inPage &&  <div className="black-on-top"><div className="closeContent" onClick={goToHome}><RiEyeCloseFill /><RiCloseLine /></div></div>}
+        {inPage &&  <div className="black-on-top"><div className="closeContent" onClick={goToHome}><RiCloseLine /></div><Menu logo="left"></Menu></div>}
+        
             <DRoute open={openPage} showContent={showContent} path={"/textos"} child={<PageFromCategory category="6" />}>
             </DRoute>
             <DRoute open={openPage} showContent={showContent} path={"/cursos"} child={<Programas category="2" type="Cursos"></Programas>}>

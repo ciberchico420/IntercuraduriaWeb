@@ -1,50 +1,177 @@
+@import '../../exports.module.scss';
 .postStyle {
-    $size: 400px;
     background-color: white;
     overflow: hidden;
-    margin: 10px;
+    width: 300px;
+    height: 300px;
+    margin: 5px;
+    border-radius: 20px;
     cursor: pointer;
-
-
-   
+    position: relative;
     & .flayer-image {
         margin-left: -25%;
         margin-top: -25%;
         transition: filter .2s;
 
     }
+    .flayer-info{
+        position: absolute;
+        background-color: rgba(0, 0, 0, 0.589);
+        top:0;
+        width: 100%;
+        height: 100%;
+
+        & p{
+            color: white;
+            text-align: center;
+            font-size: 40px;
+            padding: 10px;
+
+        }
+        & .author{
+            font-size: 20px;
+        }
+    }
+}
+.share{
+    margin-top: 10px;
+    & *{
+        margin: 5px;
+    }
 }
 
+.openPost{
+    left: 0;
+    width: 100%;
+    min-height: 100vh;
+    padding: 10px;
+    margin-top: 60px;
+    & article{
+        & .post-inner{
+            border:1px solid black;
+            min-height: 400px;
+            padding: 20px;
+            border-radius: 5px;
+            background-color: white;
+            margin-bottom: 20px;
+            box-shadow: 10px 10px rgba(0, 0, 0, 0.342);
+        }
+    }
+
+    & header{
+        position: relative;
+        padding: 20px;
+        overflow: hidden;
+        background-color: black;
+        margin-bottom: 40px;
+        display: flex;
+        align-items: center;
+        
+        & .entry-title{
+            z-index: 10000;
+            text-align: center;
+            color: rgb(255, 255, 255) !important;
+            text-decoration: none !important;  
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 20px;
+            border-radius: 10px;
+        }
+        & .entry-title-bg{
+            width: 105%;
+            height: 105%;
+            position: absolute;
+            opacity: 1;
+            background-repeat: no-repeat;
+            background-size: 100%;
+            background-position-y: center;
+            z-index: 9999;
+            filter: blur(5px);
+        }
+        & .info{
+            padding: 30px;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+            margin: 30px;
+            background-color: rgba(0, 0, 0, 0.6);
+            z-index: 10000;
+            color: white;
+            & .author{
+                font-size: large;
+                & span{
+                    font-weight: bolder;
+                   
+                }
+            }
+            
+        }
+    }
+    
+
+}
 
 .titulo-header {
     display: flex;
     align-items: center;
-    margin: 60px;
-
+    width: 100%;
+    padding: 20px;
+    padding-top: 0;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    margin-bottom: 30px;
+  
     & span {
-        background-color: black;
+        width: 400px;
+        background-color: rgb(45, 70, 141);
         color: white;
-        font-size: 40px;
+        font-size: 30px;
         padding: 30px;
-        border-radius: 50px;
+       // border-radius: 100px;
+       border-radius: 30px;
+        text-align: center;
+        margin-top: 20px;
+        box-shadow: 20px 20px 0px rgba(0, 0, 0, 0.103);
     }
 
-}
-
-.post-footer {
-    background-color: black;
 }
 
 .postsContainer {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-
     justify-content: center;
+    $padding :15%;
+    padding-left: $padding;
+    padding-right: $padding;
+}
+.contentContainer{
+    min-height: 100%;
+    width: 100%;
+    background-color: rgb(235, 235, 235)!important ;
 }
 
 @media screen and (max-width:800px) {
     .postStyle {
-        $size: 200px;
+        width: 200px;
+        height: 200px;
+        & .flayer-image {
+            margin-left: -50%;
+            margin-top: -50%;
+        }
+    }
+    .titulo-header{
+        & span{
+            font-size: 20px;
+           width: 150px; 
+        }
+        
+    }
+    .postsContainer{
+        $padding :10px;
+        padding-left: $padding;
+        padding-right: $padding;
     }
 }

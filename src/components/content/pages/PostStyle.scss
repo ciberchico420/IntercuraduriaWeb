@@ -1,8 +1,9 @@
 @import '../../exports.module.scss';
+
 #site-content{
    //background-color: white;
-   padding: 1vh;
-   margin: 10px;
+  /* padding: 1vh;
+   margin: 10px;*/
    overflow: hidden;
    & article{
        width: 100%;
@@ -23,27 +24,6 @@
         }
         & div{
             text-overflow: ellipsis;
-        }
-        & .info{
-            border:1px solid rgba(0, 0, 0, 0.123);
-            padding: 10px;
-            border-radius: 10px;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-around;
-            align-items: center;
-            margin: 30px;
-            & .date{
-                color:$secondaryColor;
-            }
-            & .author{
-                font-size: large;
-                & span{
-                    font-weight: bolder;
-                    color: $mainColor;
-                }
-            }
-            
         }
     }
     & .wp-block-button a{

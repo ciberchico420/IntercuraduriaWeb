@@ -7,7 +7,7 @@ import PageFromCategory from '../content/pages/Textos';
 import { useSpring, animated, config } from 'react-spring'
 
 import Colors from '../exports.module.scss'
-import { RiArrowDropDownLine} from 'react-icons/ri';
+import { RiArrowDropDownLine } from 'react-icons/ri';
 
 function HomeManager(props) {
 
@@ -19,27 +19,37 @@ function HomeManager(props) {
 
         </div>
 
-        <div className="menu">
-            <div className="logo"><span>INTER</span><span>CURADURIA</span></div>
-            <div className="menuContainer">
-                <MenuItem submenu={[
-                    { name: "Cursos",link:"/cursos" },
-                    { name: "Talleres",link:"/talleres"  },
-                    { name: "Seminarios",link:"/seminarios"  },
-                ]
-                }>Programas
-                </MenuItem>
-                <MenuItem link="/textos">Textos</MenuItem>
-                <MenuItem link="/archivo">Archivo</MenuItem>
-                <MenuItem>Eventos</MenuItem>
-
-
-            </div >
-
-        </div>
+        <Menu logo="center"></Menu>
 
 
     </div>)
+}
+export function Menu(props) {
+    return (<div className="menu">
+       {props.logo == "center" && <Logo></Logo>}
+        <div className="menuContainer">
+        {props.logo == "left" && <Logo></Logo>}
+            <MenuItem submenu={[
+                { name: "Cursos", link: "/cursos" },
+                { name: "Talleres", link: "/talleres" },
+                { name: "Seminarios", link: "/seminarios" },
+                { name: "ProAc", link: "/seminarios" },
+                { name: "Laboratorio", link: "/seminarios" },
+            ]
+            }>Programas
+        </MenuItem>
+            <MenuItem link="/textos">Textos</MenuItem>
+            <MenuItem link="/proyectos">Proyectos</MenuItem>
+            <MenuItem>Eventos</MenuItem>
+
+
+        </div >
+
+    </div>)
+}
+function Logo(){
+    let history = useHistory();
+    return( <div className="logo" onClick={()=>{history.push("/")}}><span>INTER</span><span>CURADURIA</span></div>)
 }
 function MenuItem(props) {
     const [toggle, setToggle] = useState(false);
@@ -67,28 +77,28 @@ function MenuItem(props) {
 
 
     return (
-        <animated.div className={(props.submenu !== undefined)?"menuItem has-submenu":"menuItem"} onMouseOver={() => { setToggle(true) }} onMouseLeave={() => { setToggle(false); }} onClick={
-            () => { 
+        <animated.div className={(props.submenu !== undefined) ? "menuItem has-submenu" : "menuItem"} onMouseOver={() => { setToggle(true) }} onMouseLeave={() => { setToggle(false); }} onClick={
+            () => {
 
-                if(props.link !== undefined){
+                if (props.link !== undefined) {
                     history.push("/")
                     history.push(props.link)
                 }
             }
-            }>
+        }>
             <animated.button>
                 {props.children}
 
             </animated.button>
-            {props.submenu !== undefined&&<RiArrowDropDownLine  size="25px" color={Colors.mainColor} style={{marginLeft:5}}/>}
+            {props.submenu !== undefined && <RiArrowDropDownLine size="25px" style={{ marginLeft: 5 }} />}
             <animated.div className="menuItemLine" style={spring}></animated.div>
 
-            {props.submenu!== undefined&&<animated.div className="subMenu" style={{transform: spring.submenuHeight}}>
+            {props.submenu !== undefined && <animated.div className="subMenu" style={{ transform: spring.submenuHeight }}>
                 <animated.ul>
                     {props.submenu !== undefined && props.submenu.map((val) => {
 
-                        return <li key={val.name} onClick={()=>{
-                            if(val.link !== undefined){
+                        return <li key={val.name} onClick={() => {
+                            if (val.link !== undefined) {
                                 history.push(val.link)
                             }
                         }}>
@@ -106,7 +116,7 @@ function MenuItem(props) {
 
 function SideMenuItem(props) {
     const history = useHistory();
-    return (<div className="sideMenuItem" onClick={()=>{
+    return (<div className="sideMenuItem" onClick={() => {
         history.push(props.path)
     }}>
         {props.children}

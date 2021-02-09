@@ -4,11 +4,13 @@
     z-index: 100;
     color: black;
     user-select: none;
+    cursor: pointer;
 
     & span {
         font-size: 100px;
         font-family: Blanch;
         letter-spacing: 8px;
+
         &:first-child {
             color: $mainColor;
         }
@@ -43,32 +45,42 @@
 .menuItem {
     z-index: 500;
     padding: 2vw;
-    
+
+    & svg {
+        color: $mainColor;
+    }
+
 }
-.has-submenu{
-    height: 20px;
+
+.has-submenu {
+    height: 50px;
     transition: height 1s;
-    &:hover{
-        height: 200px;
+
+    &:hover {
+        height: 300px;
     }
 }
 
-.menuItem button {
-    border: none;
-    background-color: transparent;
-    padding: 0;
-    font-family: Heebo;
-    font-size: $subMenuFontSize+vh;
-    color: $secondaryColor;
-    transition: font-size .5s;
-
-    &:focus {
+.menuItem {
+    cursor: pointer;
+    & button {
         border: none;
-        outline: none; 
-        font-size: ($subMenuFontSize+1)+vh;
+        background-color: transparent;
+        padding: 0;
+        font-family: Heebo;
+        font-size: $subMenuFontSize+vh;
+        color: $secondaryColor;
+        transition: font-size .5s;
+        cursor: pointer;
 
+        &:focus {
+            border: none;
+            outline: none;
+            color: $darkenColor;
+        }
     }
-    
+
+
 }
 
 .menuItemLine {
@@ -80,8 +92,8 @@
 
 .subMenu {
     background-color: $mainColor;
-    border: 1px solid $mainColor;   
-    transform: scale(1,0);
+    border: 1px solid $mainColor;
+    transform: scale(1, 0);
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
     transform-origin: 0% 0%;
@@ -90,15 +102,15 @@
     & ul {
         height: 0%;
         margin: 0;
-        padding: 0; 
+        padding: 0;
     }
 
-    & li{
+    & li {
         list-style-type: none;
         padding: 10px;
         color: $mainColor;
         background-color: white;
-        transition: padding .5s, background-color .5s,color .5s;
+        transition: padding .5s, background-color .5s, color .5s;
         font-size: 2vh;
         cursor: pointer;
 
@@ -107,7 +119,8 @@
             color: white;
             background-color: $mainColor;
         }
-        &:focus{
+
+        &:focus {
             background-color: $mainColor;
         }
     }
@@ -121,6 +134,7 @@
     display: flex;
     justify-content: space-evenly;
     margin-right: 15%;
+
     & div {
         color: $mainColor;
         font-size: 2.5vh;
@@ -139,7 +153,7 @@
     user-select: none;
     padding: 10px;
     cursor: pointer;
-    border-radius:  0 0 20px 20px;
+    border-radius: 0 0 20px 20px;
 
     &:hover {
         background-color: $mainColor;
@@ -151,37 +165,48 @@
     }
 }
 
-@media screen and (max-width:800px){
-    .homeContainer{
+@media screen and (max-width:800px) {
+    .homeContainer {
         grid-template-rows: 1fr / 5fr;
         grid-template-columns: 1fr;
     }
-        .sideMenu{
-            grid-column: 1;
-            margin-right: 0;
-        }
-        .menu{
-            grid-column: 1;
-        }
-        .menuContainer{
-            flex-direction: column;
-        }
-        .menuItem{
-            height: 40px;
-            & button{
-                font-size: 4vh;
-                &:focus{
-                    font-size: 4.5vh;
-                }
+
+    .sideMenu {
+        grid-column: 1;
+        margin-right: 0;
+    }
+
+    .menu {
+        grid-column: 1;
+    }
+
+    .menuContainer {
+        flex-direction: column;
+    }
+
+    .menuItem {
+        height: 40px;
+
+        & button {
+            font-size: 25px;
+
+            &:focus {
+                font-size: 4.5vh;
             }
-            
         }
-        .logo{
-            font-size: 7rem;
+
+    }
+
+    .logo {
+        & span {
+            font-size: 60px;
         }
-        .sideMenuItem{
-            justify-content: center;
-            margin-left: 10px;
-            margin-right: 10px;
-        }
+
+    }
+
+    .sideMenuItem {
+        justify-content: center;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
 }
