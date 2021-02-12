@@ -17,6 +17,7 @@ import Archivo from './pages/Archivo';
 import HomeManager from '../home/HomeManager';
 
 import {Menu} from '../home/HomeManager'
+import { ProAc } from './pages/ProAc';
 
 
 export default function ContentManager(props) {
@@ -76,7 +77,7 @@ export default function ContentManager(props) {
             </DRoute>
             <DRoute open={openPage} showContent={showContent} path={"/seminarios"} child={<Programas category="4" type="Seminarios"></Programas>}>
             </DRoute>
-            <DRoute open={openPage} showContent={showContent} path={"/archivo"} child={<Programas category="5" type="Archivo"></Programas>}>
+            <DRoute open={openPage} showContent={showContent} path={"/proac"} child={<ProAc/>}>
             </DRoute>
 
     </animated.div>)

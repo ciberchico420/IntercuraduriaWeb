@@ -72,7 +72,7 @@ export default function PageFromCategory(props) {
                     }
                 });
                 if (value.id == path[2]) {
-                    return (<OpenPost value={value} header={image}></OpenPost>)
+                    return (<OpenPost value={value} posts={items} header={image}></OpenPost>)
                 } else {
                     return (inOpenPost && <Post header={image} value={value} key={value.id} />)
                 }
@@ -133,5 +133,30 @@ function OpenPost(props) {
             <div className="post-inner thin">
                 {ReactHtmlParser(props.value.content.rendered).splice(-1, 1)}
             </div>
-        </article></main>)
+            <MorePosts posts={props.posts}></MorePosts>
+        </article>
+        
+        </main>)
+}
+
+function getRandom(min, max) {
+    return Math.random() * (max - min) + min;
+}
+function MorePosts(props){
+
+    let num1 = parseInt(getRandom(0,props.posts.length));
+    let num2 = parseInt(getRandom(0,props.posts.length));
+    let num3 = parseInt(getRandom(0,props.posts.length));
+    console.log(props.posts);
+    return (<div className="more-posts">También te recomendamos estos textos...
+        <div className="re-post-container"><RecomendedPost value={props.posts[num1]}/><RecomendedPost value={props.posts[num2]}/><RecomendedPost value={props.posts[num3]}/></div>
+        </div>)
+}
+
+function RecomendedPost(props){
+    var history = useHistory();
+    let goToPost = ()=>{
+        history.push("/textos/"+props.value.id)
+    }
+    return(<div className="recomended-post" onClick={goToPost} key={props.value.id}>{ReactHtmlParser(props.value.title.rendered)}</div>)
 }

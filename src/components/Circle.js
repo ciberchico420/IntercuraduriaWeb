@@ -1,11 +1,17 @@
 import React, { useEffect, useState } from 'react';
 import './main.scss'
 import { useSpring, animated } from 'react-spring';
+import Colors from './exports.module.scss'
 
 function getRandom(min, max) {
     return Math.random() * (max - min) + min;
 }
+function getRandomColor() {
+    let colors = [Colors.blue1, Colors.blue2, Colors.blue3, Colors.purple1, Colors.purple2, Colors.purple3];
+    let color = getRandom(0, colors.length);
+    return colors[parseInt(color)];
 
+}
 
 function Circle(props) {
     var radius = (props.importance * window.innerWidth / 100)
@@ -14,30 +20,20 @@ function Circle(props) {
         to: async (next) => {
             while (true) {
                 //(
-                var randX = getRandom(-120, window.innerWidth);
-                var randY = getRandom(-100, window.innerHeight);
+                let randX = getRandom(-120, window.innerWidth);
+                let randY = getRandom(-100, window.innerHeight);
 
 
                 await next({ left: randX, top: randY })
-              
+
             }
 
-        }, from: { top: getRandom(-120, window.innerHeight), left: getRandom(-100, window.innerWidth) },
-        config: { duration:randTime,mass: 1, tension: 180, friction: 12 }
+        }, from: { top: getRandom(-120, window.innerHeight), left: getRandom(-100, window.innerWidth), border: "3px solid " + getRandomColor() },
+        config: { duration: randTime, mass: 1, tension: 180, friction: 12 }
     })
-
-    useEffect(()=>{
-        return(()=>{
-            console.log("Circle unmounted")
-        })
-    })
-
 
 
     var className = "circle";
-    if (props.isEmpty) {
-        className += " empty"
-    }
 
 
     return (

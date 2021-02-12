@@ -41,8 +41,7 @@ export default function Programas(props) {
     return (<div><h1 className="titlePrograma"><span>{props.type}</span></h1>
         <div className="infoPrograma">
             <div className="activos-moto">
-                <span><RiEditCircleFill className="icon"></RiEditCircleFill></span>
-                <span className="moto">Aenean ut elementum diam, nec pharetra orci. Phasellus dignissim justo lectus, vel rhoncus nisi placerat accumsan. Aenean mollis nisi a mauris cursus, ac mattis nisi commodo. Maecenas eget nisl vestibulum, placerat ligula eget, ornare massa. Maecenas in eleifend elit. Mauris quis neque commodo, viverra eros quis, fermentum velit. Ut consectetur urna non viverra lobortis. In at congue nisi. Donec iaculis ipsum ac risus varius rhoncus. Donec in eros et nisl porttitor hendrerit quis at est. Sed volutpat velit eu eleifend vestibulum. Maecenas aliquet convallis molestie. Ut vulputate erat vitae risus aliquam consequat non quis ante.</span>
+                <span className="moto">Intercuraduria ofrece programas educativos para dialogar, debatir y compartir conocimientos e inquietudes entorno a la práctica curatorial y artística desde diferentes posicionamientos actuales.</span>
             </div>
         </div>
         <div className="category">

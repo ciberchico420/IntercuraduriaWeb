@@ -7,6 +7,16 @@ $subMenuFontSizeClick:$subMenuFontSize+.5;
 
 $topMenuSize:60px;
 
+
+$blue1:#193d7e;
+$blue2:#121672;
+$blue3:#10129e;
+
+$purple1:#402f88;
+$purple2:#393fc0;
+$purple3:#434394;
+
+
 :export{
     mainColor:$mainColor;
     secondaryColor:$secondaryColor;
@@ -14,4 +24,11 @@ $topMenuSize:60px;
     subMenuFontSizeHover:$subMenuFontSizeHover;
     subMenuFontSizeClick:$subMenuFontSizeClick;
     darkenColor:$darkenColor;
+    blue1:$blue1;
+    blue2:$blue2;
+    blue3:$blue3;
+
+    purple1:$purple1;
+    purple2:$purple2;
+    purple3:$purple3;
 }

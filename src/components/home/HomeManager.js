@@ -8,6 +8,7 @@ import { useSpring, animated, config } from 'react-spring'
 
 import Colors from '../exports.module.scss'
 import { RiArrowDropDownLine } from 'react-icons/ri';
+import { FaFacebook, FaInstagram } from 'react-icons/fa'
 
 function HomeManager(props) {
 
@@ -20,21 +21,22 @@ function HomeManager(props) {
         </div>
 
         <Menu logo="center"></Menu>
+        <SocialIcons></SocialIcons>
 
 
     </div>)
 }
 export function Menu(props) {
     return (<div className="menu">
-       {props.logo == "center" && <Logo></Logo>}
+        {props.logo == "center" && <Logo></Logo>}
         <div className="menuContainer">
-        {props.logo == "left" && <Logo></Logo>}
+            {props.logo == "left" && <Logo></Logo>}
             <MenuItem submenu={[
                 { name: "Cursos", link: "/cursos" },
                 { name: "Talleres", link: "/talleres" },
                 { name: "Seminarios", link: "/seminarios" },
-                { name: "ProAc", link: "/seminarios" },
-                { name: "Laboratorio", link: "/seminarios" },
+                { name: "ProAc", link: "/proac" },
+                { name: "Laboratorio", link: "/laboratorios" },
             ]
             }>Programas
         </MenuItem>
@@ -47,9 +49,17 @@ export function Menu(props) {
 
     </div>)
 }
-function Logo(){
+function Logo() {
     let history = useHistory();
-    return( <div className="logo" onClick={()=>{history.push("/")}}><span>INTER</span><span>CURADURIA</span></div>)
+    return (<div className="logo" onClick={() => { history.push("/") }}><span>INTER</span><span>CURADURIA</span></div>)
+}
+
+function SocialIcons() {
+    return (<div className="social-icons"><p>¡Síguenos en nuestras redes!</p>
+        <div className="icons">
+            <a href="https://www.facebook.com/Intercuraduria-101411698614498" target="_blank"><FaFacebook /></a>
+            <a href="https://www.instagram.com/intercuraduria" target="_blank"><FaInstagram /></a></div>
+    </div>)
 }
 function MenuItem(props) {
     const [toggle, setToggle] = useState(false);

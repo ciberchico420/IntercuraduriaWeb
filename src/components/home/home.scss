@@ -9,10 +9,10 @@
     & span {
         font-size: 100px;
         font-family: Blanch;
-        letter-spacing: 8px;
+        letter-spacing: 5px;
 
         &:first-child {
-            color: $mainColor;
+            color: $blue1;
         }
     }
 
@@ -84,15 +84,15 @@
 }
 
 .menuItemLine {
-    background-color: $mainColor;
+    background-color: $purple1;
     width: 0%;
     height: 4px;
     user-select: none;
 }
 
 .subMenu {
-    background-color: $mainColor;
-    border: 1px solid $mainColor;
+    background-color: $purple1;
+    border: 1px solid $purple1;
     transform: scale(1, 0);
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
@@ -117,7 +117,7 @@
         &:hover {
             padding: 20px;
             color: white;
-            background-color: $mainColor;
+            background-color: $purple1;
         }
 
         &:focus {
@@ -153,10 +153,10 @@
     user-select: none;
     padding: 10px;
     cursor: pointer;
-    border-radius: 0 0 20px 20px;
+    border-radius: 0 0 50px 50px;
 
     &:hover {
-        background-color: $mainColor;
+        background-color: $purple3;
         color: white;
     }
 
@@ -165,7 +165,26 @@
     }
 }
 
+.social-icons{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    grid-column: 2;
+    grid-row: 3;
+    text-align: center;
+    color: $purple2;
+    & .icons a{
+        color: $purple2;
+        padding: 10px;
+        font-size: 30px;
+        cursor: pointer;
+    }
+}
+
 @media screen and (max-width:800px) {
+    .social-icons{
+        grid-column: 1;
+    }
     .homeContainer {
         grid-template-rows: 1fr / 5fr;
         grid-template-columns: 1fr;
