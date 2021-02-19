@@ -9,7 +9,7 @@ import { Contacto } from './pages/Contacto';
 
 export default function SideContentManager() {
     const [open, setOpen] = useState(false);
-    const spring = useSpring({ width: open ? "100%" : "0%", config: config.wobbly })
+    const spring = useSpring({ width: open ? "100%" : "0%", config: config.stiff })
     const location = useLocation()
     const history = useHistory();
 

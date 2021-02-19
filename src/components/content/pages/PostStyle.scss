@@ -13,7 +13,6 @@
        font-size: 4rem;
        text-overflow: ellipsis;
        overflow: hidden;
-       min-width: .4fr;
     }
     & .entry-header{
         display: grid;
@@ -171,11 +170,7 @@
         height: auto;
         max-width: 100%;
         border-radius: 10px;
-        transition: transform .2s;
-        &:hover{
-            box-shadow: 0px 10px 20px 0px #00000062;
-            transform:translate(0,-10px);
-        }
+        padding: 2px;
     }
 
     & details {

@@ -40,6 +40,7 @@
     justify-content: center;
     flex-direction: column;
     user-select: none;
+    text-align: center;
 }
 
 .menuItem {
@@ -49,6 +50,10 @@
     & svg {
         color: $mainColor;
     }
+    & a{
+        text-decoration: none;
+        color: inherit;
+    }
 
 }
 
@@ -57,7 +62,7 @@
     transition: height 1s;
 
     &:hover {
-        height: 300px;
+        height: 200px;
     }
 }
 
@@ -71,6 +76,7 @@
         font-size: $subMenuFontSize+vh;
         color: $secondaryColor;
         transition: font-size .5s;
+        padding-right: 2px;
         cursor: pointer;
 
         &:focus {

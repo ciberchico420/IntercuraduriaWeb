@@ -14,10 +14,11 @@ import DRoute from './DRoute'
 import Programas from './pages/Programas'
 import { RiEyeCloseFill, RiCloseLine } from 'react-icons/ri'
 import Archivo from './pages/Archivo';
-import HomeManager from '../home/HomeManager';
+import HomeManager, { SocialIcons } from '../home/HomeManager';
 
-import {Menu} from '../home/HomeManager'
+import {Menu,Logo} from '../home/HomeManager'
 import { ProAc } from './pages/ProAc';
+import {Tienda} from './pages/Tienda'
 
 
 export default function ContentManager(props) {
@@ -25,10 +26,6 @@ export default function ContentManager(props) {
 
     const [showContent, setShowContent] = useState(false);
     const [inPage, setInPage] = useState(false);
-
-
-
-
     useEffect(() => {
         if (location.pathname === "/") {
             closePage();
@@ -67,9 +64,11 @@ export default function ContentManager(props) {
     }
     return (<animated.div className={"content"} style={spring}>
       
-        {inPage &&  <div className="black-on-top"><div className="closeContent" onClick={goToHome}><RiCloseLine /></div><Menu logo="left"></Menu></div>}
+        {inPage &&  <div className="black-on-top"><div className="closeContent" onClick={goToHome}><RiCloseLine /></div><Menu logo="left" top={true}></Menu></div>}
         
-            <DRoute open={openPage} showContent={showContent} path={"/textos"} child={<PageFromCategory category="6" />}>
+            <DRoute open={openPage} showContent={showContent} path={"/textos"} child={<PageFromCategory path="/textos" category="6" />}>
+            </DRoute>
+            <DRoute open={openPage} showContent={showContent} path={"/proyectos"} child={<PageFromCategory path="/proyectos" category="21" />}>
             </DRoute>
             <DRoute open={openPage} showContent={showContent} path={"/cursos"} child={<Programas category="2" type="Cursos"></Programas>}>
             </DRoute>
@@ -79,6 +78,9 @@ export default function ContentManager(props) {
             </DRoute>
             <DRoute open={openPage} showContent={showContent} path={"/proac"} child={<ProAc/>}>
             </DRoute>
+
+            {inPage &&  <div className="footer"><div className="footer-logo"><Logo></Logo><span className="name">Intercuraduria 2021</span></div><SocialIcons></SocialIcons></div>}
+    
 
     </animated.div>)
 }

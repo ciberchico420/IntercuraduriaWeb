@@ -4,14 +4,16 @@
     display: flex;
     justify-content: center;
   & span{
-    border: 1px solid black;
-    background-color: black;
-    color: white;
+    color: $blue2;
     width: 50%;
-    border-radius: 20px;
+    border-radius: 30px;
     margin: 10px;
-    margin-top: 60px;
+    margin-top: 30px;
     padding:20px;
+    padding-left: 0;
+    margin-left: 0;
+    font-size: 3rem;
+    text-align: center;
     
   }
 }
@@ -32,7 +34,11 @@
             padding: 10px;
             background-color: white;
             text-align: center;
-            border-radius: 30px;
+            border-radius: 10px;
+            border: 2px solid rgba(0, 0, 0, 0.158);
+            margin: 0 10% 0 10%;
+            font-size: 1rem;
+            color: rgba(0, 0, 0, 0.651);
         }
         & .icon{
             font-size: 5vw;
@@ -48,8 +54,8 @@
     padding: 5px;
     overflow: auto;
     background: rgb(255, 255, 255);
+    border: 2px solid $blue2;
     position: relative;
-    box-shadow: 100px 100px 100px rgba(0, 0, 0, 0.185);
     margin: 20px;
     padding:20px;
     transition: max-width 2s, max-height 2s;

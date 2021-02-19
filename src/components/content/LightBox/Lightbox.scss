@@ -1,0 +1,41 @@
+@import '../content.scss';
+.lightbox{
+    background-color: rgba(0, 0, 0, 0.411);
+    position: fixed;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 100000;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    align-items: center;
+    justify-content: center;
+    & .all-images{
+       
+        display: flex;
+        flex-direction: row;
+        & img{
+            width: 5vw;
+            height: 5vw;
+            border-radius: 5px;
+            margin-left: 10px;
+            border:2px solid black;
+            cursor: pointer;
+            &:hover{
+                border:2px solid $blue2;
+            }
+        }
+    }
+    & .s-image{
+        border-radius: 10px;
+        overflow: hidden;
+        margin: 60px;
+        box-shadow: 7px 15px 20px rgba(0, 0, 0, 0.144);
+        & img{
+            width: 100%;
+            
+        }
+    }
+}

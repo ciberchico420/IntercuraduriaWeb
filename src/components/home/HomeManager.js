@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Route, Switch, useHistory } from 'react-router-dom';
+import { Route, Switch, useHistory, useLocation } from 'react-router-dom';
 import ButtonCircle from '../ButtonCircle';
 import '../main.scss'
 import './home.scss'
@@ -20,8 +20,8 @@ function HomeManager(props) {
 
         </div>
 
-        <Menu logo="center"></Menu>
-        <SocialIcons></SocialIcons>
+        <Menu top={false} logo="center"></Menu>
+        <SocialIcons followus></SocialIcons>
 
 
     </div>)
@@ -31,31 +31,30 @@ export function Menu(props) {
         {props.logo == "center" && <Logo></Logo>}
         <div className="menuContainer">
             {props.logo == "left" && <Logo></Logo>}
-            <MenuItem submenu={[
+            <MenuItem top={props.top} submenu={[
                 { name: "Cursos", link: "/cursos" },
                 { name: "Talleres", link: "/talleres" },
-                { name: "Seminarios", link: "/seminarios" },
-                { name: "ProAc", link: "/proac" },
-                { name: "Laboratorio", link: "/laboratorios" },
+                { name: "PROAC", link: "/proac" },
             ]
             }>Programas
         </MenuItem>
-            <MenuItem link="/textos">Textos</MenuItem>
-            <MenuItem link="/proyectos">Proyectos</MenuItem>
-            <MenuItem>Eventos</MenuItem>
+            <MenuItem top={props.top} link="/textos">Textos</MenuItem>
+            <MenuItem top={props.top} link="/proyectos">Proyectos</MenuItem>
+            <MenuItem top={props.top}>Laboratorio</MenuItem>
+            <MenuItem top={props.top}><a href="http://drokt.com/wordpress" target="_blank">Tienda</a></MenuItem>
 
 
         </div >
 
     </div>)
 }
-function Logo() {
+export function Logo() {
     let history = useHistory();
     return (<div className="logo" onClick={() => { history.push("/") }}><span>INTER</span><span>CURADURIA</span></div>)
 }
 
-function SocialIcons() {
-    return (<div className="social-icons"><p>¡Síguenos en nuestras redes!</p>
+export function SocialIcons(props) {
+    return (<div className="social-icons">{props.hasOwnProperty("followus")&&<p>¡Síguenos en nuestras redes!</p>}
         <div className="icons">
             <a href="https://www.facebook.com/Intercuraduria-101411698614498" target="_blank"><FaFacebook /></a>
             <a href="https://www.instagram.com/intercuraduria" target="_blank"><FaInstagram /></a></div>
@@ -63,10 +62,13 @@ function SocialIcons() {
 }
 function MenuItem(props) {
     const [toggle, setToggle] = useState(false);
+    const [inPage, setInPage] = useState(false);
+
 
     const fontSize = Colors.subMenuFontSize;
 
     let history = useHistory();
+    let location = useLocation();
 
     const spring = useSpring({
         to: async (next) => {
@@ -84,19 +86,37 @@ function MenuItem(props) {
 
         }
     })
+    useEffect(() => {
+        if (props.link != undefined) {
+            let path = location.pathname.split("/")[1];
+            if (path == props.link.replace("/", "")) {
+                console.log("In page ", path)
+                setInPage(true);
+            }else{
+                setInPage(false);
+            }
 
+
+        }
+    });
+
+    let style = !props.top?undefined:{ backgroundColor: inPage ? Colors.mainColor : "transparent",maxHeight:inPage?"40px":"",marginTop:"-3px"};
 
     return (
-        <animated.div className={(props.submenu !== undefined) ? "menuItem has-submenu" : "menuItem"} onMouseOver={() => { setToggle(true) }} onMouseLeave={() => { setToggle(false); }} onClick={
+        <animated.div className={(props.submenu !== undefined) ? "menuItem has-submenu" : "menuItem"} style={style} onMouseOver={() => { setToggle(true) }} onMouseLeave={() => { setToggle(false); }} onClick={
             () => {
 
                 if (props.link !== undefined) {
                     history.push("/")
                     history.push(props.link)
                 }
+                if (props.link !== undefined) {
+                    history.push("/")
+                    history.push(props.link)
+                }
             }
         }>
-            <animated.button>
+            <animated.button style={{color:inPage?"white":"" }}>
                 {props.children}
 
             </animated.button>
