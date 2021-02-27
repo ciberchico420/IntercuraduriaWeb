@@ -67,9 +67,11 @@
         }
     }
     & .image-header{
-        height: 250px;
-        border: 1px solid rgba(0, 0, 0, 0.329);
+        height: 400px;
+        margin-bottom: 30px;
+        //width: 100%;
         overflow: hidden;
+        border:1px solid rgba(0, 0, 0, 0.178);
         & .entry-title-bg{
             width: 105%;
             height: 105%;
@@ -83,7 +85,7 @@
     }
 
     & header{
-        background-color: $purple2;
+        //background-color: $purple2;
         margin-bottom: 0px;
         display: flex;
         align-items: center;
@@ -91,7 +93,7 @@
         
         & .entry-title{
             z-index: 10000;
-            color: rgb(255, 255, 255) !important;
+            color:$purple2 !important;
             text-decoration: none !important;  
             padding: 10px;
             font-size: 2rem !important;
@@ -104,23 +106,26 @@
             justify-content: space-around;
             align-items: center;
             z-index: 10000;
-            color: white;
+            color: $purple2;
             & .author-date{
                 text-align: center;
-                padding: 5px;
+                padding: 15px;
+                background-color: rgba(147, 128, 253, 0.075);
+                border-radius: 20px;
                 & :last-child{
                     margin-top: 5px;
                 }
             }
             & .author{
                 font-size: large;
+                
                 & span{
                     font-weight: bolder;
                    
                 }
             }
             & .share{
-                background-color: white;
+                background-color: rgba(147, 128, 253, 0.075);
                 border-radius: 20px;
                 padding-top: 5px;
             }

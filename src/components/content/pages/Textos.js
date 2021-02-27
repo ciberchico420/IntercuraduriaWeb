@@ -59,7 +59,7 @@ export default function PageFromCategory(props) {
 
     //useScript("http://drokt.com/wordpress/wp-includes/css/dist/block-library/style.min.css?ver=5.6")
     return (<div className="contentContainer" ref={contentRef}>
-        <div className="postsContainer" style={{ marginTop: inOpenPost ? "10%" : "60px" }}>
+        <div className="postsContainer" style={{ marginTop: inOpenPost ? "3%" : "60px" }}>
             {items.map(value => {
                 var path = history.location.pathname.split("/")
                 let th =value._embedded["wp:featuredmedia"];
@@ -157,6 +157,8 @@ function MorePosts(props) {
 function RecomendedPost(props) {
     var history = useHistory();
     let goToPost = () => {
+        document.body.scrollTop = 0; // For Safari
+        document.documentElement.scrollTop = 0;
         history.push(history.location.pathname.split("/")[0] + props.value.id)
     }
     return (<div className="recomended-post" onClick={goToPost} key={props.value.id}>{ReactHtmlParser(props.value.title.rendered)}</div>)

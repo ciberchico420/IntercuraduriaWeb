@@ -1,4 +1,6 @@
+@import '../../exports.module.scss';
 .nosotras {
+    display: flex;
     .info {
         background: white;
         margin: 20px 200px 20px 200px;
@@ -6,7 +8,9 @@
         padding: 30px;
         padding-top: 5px;
         & .title{
+            font-weight: bold;
             font-size: 30px;
+            color: $blue2;
         }
     }
 }

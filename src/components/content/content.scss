@@ -9,7 +9,7 @@
     margin: 0;
     padding: 0;
     background-color: rgb(242, 242, 248);
-    overflow: hidden;
+   // overflow: hidden;
     display: grid;
     grid-template-columns: 1 .2;
     
@@ -153,12 +153,12 @@
     margin: 0;
     padding: 0;
     // display: flex;
-    background: $blue1;
-    background-image: url("../../assets/img/background\ circles.svg");
+    background: white;
+    //background-image: url("../../assets/img/background\ circles.svg");
     & .side-close-content {
         position: fixed;
         top: 50vh;
-        color: white;
+        color: $blue2;
         font-size: 50px;
         margin-left: 10px;
         flex-grow: 0.1;
@@ -166,7 +166,7 @@
         transition: color .5s;
         & :focus,
         :hover {
-            color: rgb(207, 207, 207);
+            color: rgb(101, 10, 219);
         }
     }
     & .side-content {
