@@ -41,7 +41,7 @@ export function Menu(props) {
             <MenuItem top={props.top} link="/textos">Textos</MenuItem>
             <MenuItem top={props.top} link="/proyectos">Proyectos</MenuItem>
             <MenuItem top={props.top}>Laboratorio</MenuItem>
-            <MenuItem top={props.top}><a href="http://intercuraduria.com/tienda" target="_blank">Tienda</a></MenuItem>
+            <MenuItem top={props.top}><a href="/tienda" target="_blank">Tienda</a></MenuItem>
 
 
         </div >
