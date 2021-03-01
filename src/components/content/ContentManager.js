@@ -66,9 +66,9 @@ export default function ContentManager(props) {
       
         {inPage &&  <div className="black-on-top"><div className="closeContent" onClick={goToHome}><RiCloseLine /></div><Menu logo="left" top={true}></Menu></div>}
         
-            <DRoute open={openPage} showContent={showContent} path={"/textos"} child={<PageFromCategory path="/textos" category="16" />}>
+            <DRoute open={openPage} showContent={showContent} path={"/textos"} child={<PageFromCategory path="/textos" category="2" />}>
             </DRoute>
-            <DRoute open={openPage} showContent={showContent} path={"/proyectos"} child={<PageFromCategory path="/proyectos" category="17" />}>
+            <DRoute open={openPage} showContent={showContent} path={"/proyectos"} child={<PageFromCategory path="/proyectos" category="3" />}>
             </DRoute>
             <DRoute open={openPage} showContent={showContent} path={"/cursos"} child={<Programas category="2" type="Cursos"></Programas>}>
             </DRoute>
