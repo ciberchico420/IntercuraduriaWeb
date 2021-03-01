@@ -14,7 +14,7 @@ export default function Programas(props) {
     const [inactivos, setInactivos] = useState([]);
     const [error, setError] = useState(null);
     const [isLoaded, setIsLoaded] = useState(false);
-    const inactiveCategory = 5;
+    const inactiveCategory = 10;
     const sitio = "https://intercuraduria.com/tienda"
 
     useEffect(() => {
