@@ -23,3 +23,5 @@ yarn-error.log*
 
 # Optional eslint cache
 .eslintcache
+
+/server/node_modules
