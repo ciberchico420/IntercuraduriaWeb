@@ -47,7 +47,7 @@ export default function PageFromCategory(props) {
 
     useEffect(() => {
         const script = document.createElement('link');
-        script.href = "http://drokt.com/wordpress/wp-includes/css/dist/block-library/style.min.css?ver=5.6";
+        script.href = "https://intercuraduria.com/tienda/wp-includes/css/dist/block-library/style.min.css?ver=5.6";
         script.async = true;
         script.rel = "stylesheet"
         document.body.appendChild(script);
@@ -57,7 +57,6 @@ export default function PageFromCategory(props) {
         }
     }, []);
 
-    //useScript("http://drokt.com/wordpress/wp-includes/css/dist/block-library/style.min.css?ver=5.6")
     return (<div className="contentContainer" ref={contentRef}>
         <div className="postsContainer" style={{ marginTop: inOpenPost ? "3%" : "60px" }}>
             {items.map(value => {

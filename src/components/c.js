@@ -1,1 +1,1 @@
-export const sitio = "http://drokt.com/wordpress"
+export const sitio = "https://intercuraduria.com/tienda"

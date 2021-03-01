@@ -15,7 +15,7 @@ export default function Programas(props) {
     const [error, setError] = useState(null);
     const [isLoaded, setIsLoaded] = useState(false);
     const inactiveCategory = 5;
-    const sitio = "http://drokt.com/wordpress"
+    const sitio = "https://intercuraduria.com/tienda"
 
     useEffect(() => {
         fetch(sitio+"/wp-json/wp/v2/posts?categories=" + props.category + "&_embed")
@@ -134,7 +134,7 @@ function Registering(props) {
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(datos)
             };
-            fetch('http://drokt.com:3080/api/register', requestOptions)
+            fetch('http://intercuraduria.com/api/register', requestOptions)
                 .then(response => response.json())
                 .then(data => console.log(data));
 
