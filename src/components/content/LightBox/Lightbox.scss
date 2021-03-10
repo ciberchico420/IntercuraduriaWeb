@@ -22,6 +22,7 @@
             border-radius: 5px;
             margin-left: 10px;
             border:2px solid black;
+            
             cursor: pointer;
             &:hover{
                 border:2px solid $blue2;
@@ -33,8 +34,11 @@
         overflow: hidden;
         margin: 60px;
         box-shadow: 7px 15px 20px rgba(0, 0, 0, 0.144);
+        
         & img{
-            width: 100%;
+            min-width: 400px!important;
+            max-width: 95vw;
+            //width: 100%;
             
         }
     }

@@ -19,7 +19,7 @@
     background-color: #000;
 
     height: $topMenuSize;
-    max-height: $topMenuSize;
+    min-height: $topMenuSize;
     margin-bottom: 15px;
 
     //border-bottom-right-radius: 20px;
@@ -179,23 +179,20 @@
 
 @media screen and (max-width: 800px) {
     .black-on-top {
+         height: inherit;
+        // max-height: none;
         & .menuContainer {
-            flex-direction: row;
+           
+            flex-direction: column;
 
         }
         & .menuItem button{
             
-            font-size: .8rem !important;
+            font-size: 1.3rem !important;
         }
 
         & .menuItem button {
             font-size: 15px;
-        }
-        & .logo {
-            display:none;
-            & span {
-                margin-left: -10px;
-            }
         }
         .closeContent {
             padding-top: 10px;

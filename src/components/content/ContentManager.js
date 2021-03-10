@@ -12,13 +12,14 @@ import {
 import PageFromCategory from './pages/Textos';
 import DRoute from './DRoute'
 import Programas from './pages/Programas'
-import { RiEyeCloseFill, RiCloseLine } from 'react-icons/ri'
-import Archivo from './pages/Archivo';
 import HomeManager, { SocialIcons } from '../home/HomeManager';
 
 import {Menu,Logo} from '../home/HomeManager'
 import { ProAc } from './pages/ProAc';
 import {Tienda} from './pages/Tienda'
+import { useMediaQuery } from '@react-hook/media-query';
+import {HiMenu} from 'react-icons/hi'
+
 
 
 export default function ContentManager(props) {
@@ -31,15 +32,17 @@ export default function ContentManager(props) {
             closePage();
         }
     }, [location.pathname])
+    
 
     const history = useHistory()
+    const isMobile = useMediaQuery("screen and (max-width: 800px)")
 
     useEffect(() => {
-        return history.listen((location) => {
-            console.log(`You changed the page to: ${location.pathname}`)
-
-        })
-    }, [history])
+     if(isMobile == false){
+         setOpenMenu("visible")
+     }
+    })
+    const [openMenu,setOpenMenu] = useState("hidden");
 
     const spring = useSpring({
         to: async (next) => {
@@ -62,9 +65,24 @@ export default function ContentManager(props) {
         setInPage(false)
         setShowContent(false);
     }
+    const clickMenu = ()=>{
+        if(openMenu == "hidden"){
+             setOpenMenu("visible");
+        }
+        if(openMenu == "visible"){
+            setOpenMenu("hidden");
+       }
+       
+    }
+    const MenuIcon = ()=>{
+        return <div onClick={clickMenu}><HiMenu size="2rem" color="white"></HiMenu></div>;
+    }
     return (<animated.div className={"content"} style={spring}>
       
-        {inPage &&  <div className="black-on-top"><div className="closeContent" onClick={goToHome}><RiCloseLine /></div></div>}
+        {inPage &&  <div className="black-on-top" style={{maxHeight:openMenu=="visible"?"none":"60px"}}>
+        {isMobile&&<MenuIcon></MenuIcon>}
+        {openMenu != "hidden"&&<Menu logo="left" visible={openMenu} clickMenu={clickMenu} top={true}></Menu>}
+        </div>}
         
             <DRoute open={openPage} showContent={showContent} path={"/textos"} child={<PageFromCategory path="/textos" category="2" />}>
             </DRoute>

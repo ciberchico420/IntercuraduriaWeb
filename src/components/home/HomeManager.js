@@ -27,9 +27,10 @@ function HomeManager(props) {
     </div>)
 }
 export function Menu(props) {
+    let vis = props.visible != undefined?props.visible:true;
     return (<div className="menu">
         {props.logo == "center" && <Logo></Logo>}
-        <div className="menuContainer">
+        <div className="menuContainer" style={{visibility:vis}}>
             {props.logo == "left" && <Logo></Logo>}
             <MenuItem top={props.top} submenu={[
                 { name: "Cursos", link: "/cursos" },
