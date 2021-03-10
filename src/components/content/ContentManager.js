@@ -64,7 +64,7 @@ export default function ContentManager(props) {
     }
     return (<animated.div className={"content"} style={spring}>
       
-        {inPage &&  <div className="black-on-top"><div className="closeContent" onClick={goToHome}><RiCloseLine /></div><Menu logo="left" top={true}></Menu></div>}
+        {inPage &&  <div className="black-on-top"><div className="closeContent" onClick={goToHome}><RiCloseLine /></div></div>}
         
             <DRoute open={openPage} showContent={showContent} path={"/textos"} child={<PageFromCategory path="/textos" category="2" />}>
             </DRoute>
