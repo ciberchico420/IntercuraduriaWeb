@@ -54,7 +54,7 @@ export function Logo() {
 }
 
 export function SocialIcons(props) {
-    return (<div className="social-icons">{props.hasOwnProperty("followus")&&<p>¡Síguenos en nuestras redes!</p>}
+    return (<div className="social-icons">
         <div className="icons">
             <a href="https://www.facebook.com/Intercuraduria-101411698614498" target="_blank"><FaFacebook /></a>
             <a href="https://www.instagram.com/intercuraduria" target="_blank"><FaInstagram /></a></div>

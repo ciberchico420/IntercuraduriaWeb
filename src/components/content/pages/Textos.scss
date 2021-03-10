@@ -2,9 +2,10 @@
 
 .postsContainer {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     flex-wrap: wrap;
     justify-content: center;
+    align-content: center;
     padding: 20px;
     margin: 0 10% 0 10%;
 }
@@ -13,16 +14,18 @@
 .postStyle {
     background-color: white;
     overflow: hidden;
-    width: 600px;
+    width: 60%;
     height: 400px;
     margin: 5px;
     border-radius: 20px;
     cursor: pointer;
     position: relative;
     & .flayer-image {
-        margin-left: -50%;
-        margin-top: -50%;
         transition: filter .2s;
+        min-width: 100%;
+        position: absolute;
+        bottom: 0;
+        right:0;
 
     }
     .flayer-info{
@@ -31,6 +34,7 @@
         top:0;
         width: 100%;
         height: 100%;
+
 
         & p{
             color: white;
@@ -111,6 +115,7 @@
                 text-align: center;
                 padding: 15px;
                 background-color: rgba(147, 128, 253, 0.075);
+                margin-right: 20px;
                 border-radius: 20px;
                 & :last-child{
                     margin-top: 5px;

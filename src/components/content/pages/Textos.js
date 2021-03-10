@@ -118,7 +118,7 @@ function OpenPost(props) {
     useLightBox(postRef)
     return (<main id="site-content" className="openPost" key={props.value.id}>
         <article>
-            <div className="image-header"><div className="entry-title-bg" style={{ backgroundImage: "url(" + props.header+ ")" }}></div></div>
+         
             <header className="entry-header"><h3 className="entry-title">{ReactHtmlParser(props.value.title.rendered)}</h3>
                 <div className="info">
                     <div className="author-date">
