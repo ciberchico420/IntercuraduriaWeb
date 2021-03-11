@@ -14,6 +14,6 @@ export function Contacto() {
 
         </div>
         <div className="mandanos-un-mail"><p>¿Tienes algún taller que te gustaría proponernos?</p>
-            <p>Mándanos un correo a intercuraduriaprogramas@gmail.com</p></div>
+            <p>Mándanos un correo a <b>contacto@intercuraduria.com</b></p></div>
     </div>)
 }

@@ -9,6 +9,7 @@ import { useSpring, animated, config } from 'react-spring'
 import Colors from '../exports.module.scss'
 import { RiArrowDropDownLine } from 'react-icons/ri';
 import { FaFacebook, FaInstagram } from 'react-icons/fa'
+import {RiContactsBook2Line} from 'react-icons/ri'
 
 function HomeManager(props) {
 
