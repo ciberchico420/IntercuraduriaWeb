@@ -178,6 +178,7 @@
     grid-column: 2;
     grid-row: 3;
     text-align: center;
+    margin-top: 40px;
     color: $purple2;
     & .icons a{
         color: $purple2;
@@ -195,10 +196,16 @@
         grid-template-rows: 1fr / 5fr;
         grid-template-columns: 1fr;
     }
+    .sideMenuItem {
+        margin-top: 10px;
+        border-radius: 50px;
+        
+    }
 
     .sideMenu {
         grid-column: 1;
         margin-right: 0;
+        
     }
 
     .menu {

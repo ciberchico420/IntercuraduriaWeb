@@ -75,13 +75,13 @@ export default function ContentManager(props) {
        
     }
     const MenuIcon = ()=>{
-        return <div onClick={clickMenu}><HiMenu size="2rem" color="white"></HiMenu></div>;
+        return <div className="MenuIcon" onClick={clickMenu}><HiMenu size="2rem" color="white"></HiMenu></div>;
     }
     return (<animated.div className={"content"} style={spring}>
       
         {inPage &&  <div className="black-on-top" style={{maxHeight:openMenu=="visible"?"none":"60px"}}>
         {isMobile&&<MenuIcon></MenuIcon>}
-        {openMenu != "hidden"&&<Menu logo="left" visible={openMenu} clickMenu={clickMenu} top={true}></Menu>}
+        {openMenu != "hidden"&&<Menu logo={isMobile?"center":"left"} visible={openMenu} clickMenu={clickMenu} top={true}></Menu>}
         </div>}
         
             <DRoute open={openPage} showContent={showContent} path={"/textos"} child={<PageFromCategory path="/textos" category="2" />}>
@@ -95,7 +95,7 @@ export default function ContentManager(props) {
             <DRoute open={openPage} showContent={showContent} path={"/proac"} child={<ProAc/>}>
             </DRoute>
 
-            {inPage &&  <div className="footer"><div className="footer-logo"><Logo></Logo><span className="name">Intercuraduria 2021</span></div><SocialIcons></SocialIcons></div>}
+            {inPage &&  <div className="footer"><div className="footer-logo"><Logo></Logo><span className="name">Intercuraduria 2021<br></br>contacto@intercuraduria.com</span></div><SocialIcons></SocialIcons></div>}
     
 
     </animated.div>)
