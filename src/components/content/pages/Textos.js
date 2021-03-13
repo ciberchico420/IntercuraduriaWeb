@@ -50,10 +50,10 @@ export default function PageFromCategory(props) {
         script.href = "https://intercuraduria.com/tienda/wp-includes/css/dist/block-library/style.min.css?ver=5.6";
         script.async = true;
         script.rel = "stylesheet"
-        //document.body.appendChild(script);
+        document.body.appendChild(script);
 
         return () => {
-           // document.body.removeChild(script);
+            document.body.removeChild(script);
         }
     }, []);
 
