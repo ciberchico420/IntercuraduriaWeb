@@ -91,7 +91,7 @@ function Post(props) {
     var imgBg = props.header !== undefined ? props.header : ""
     return (
         <div className="postStyle button" onMouseOver={() => { setOver(true) }} onMouseLeave={() => { setOver(false) }} onClick={openFunc}>
-            <img className="flayer-image" alt="Imagen" src={imgBg}></img>
+            <div className="flayer-image"  ><img  alt="Imagen" src={imgBg}></img></div>
             <animated.div className="flayer-info" style={spring}>
                 <p>{ReactHtmlParser(props.value.title.rendered)}</p>
                 <p className="author">Escrito por {props.value._embedded.author[0].name}</p>
@@ -119,21 +119,21 @@ function OpenPost(props) {
     return (<main id="site-content" className="openPost" key={props.value.id}>
         <article>
          
-            <header className="entry-header"><h3 className="entry-title">{ReactHtmlParser(props.value.title.rendered)}</h3>
+           
+                <div className="entry-title">{ReactHtmlParser(props.value.title.rendered)}</div>
                 <div className="info">
                     <div className="author-date">
                         <div className="author">Escrito por <span>{props.value._embedded.author[0].name}</span></div>
                         <div className="date"><BsCalendarFill style={{ marginRight: "3px" }}></BsCalendarFill>{date.getDay() + "/" + date.getMonth() + "/" + date.getFullYear()}</div>
                     </div>
-
-                    <ShareButtons size={30}></ShareButtons>
-
                 </div>
-            </header>
+           
+           
 
             <div className="entry-content post-inner thin" ref={postRef}>
                 {ReactHtmlParser(props.value.content.rendered)}
             </div>
+            <ShareButtons size={30}></ShareButtons>
             <MorePosts posts={props.posts}></MorePosts>
         </article>
 

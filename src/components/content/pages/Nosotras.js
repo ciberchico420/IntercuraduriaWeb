@@ -1,13 +1,16 @@
 import react from 'react'
 import './Nosotras.scss'
+import Emi from '../../../assets/img/Emi.png'
+import Adriana from '../../../assets/img/Adriana.png'
+import Circulo from '../../../assets/img/circulo.png'
 export default function Nosotras(props) {
     return (<div className="nosotras">
         <div className="info">
-            <p className="title">Nosotras</p>
+           
             <p>Somos un grupo de curadoras interesadas en abordar la Curaduría desde diferentes escenarios, enfoques y circunstancias contemporáneas, tanto en México como en diferentes latitudes de Latinoamérica.</p>
-            <p>Intercuraduría se establece como una plataforma digital y laboratorio curatorial para dialogar, debatir y compartir conocimientos e inquietudes entorno a la práctica curatorial desde diferentes posicionamientos actuales.
+            <p><b>Intercuraduría</b> se establece como una plataforma digital y laboratorio curatorial para dialogar, debatir y compartir conocimientos e inquietudes entorno a la práctica curatorial desde diferentes posicionamientos actuales.
              A partir de nuestro programa compuesto de cursos y talleres, elaborados desde diversos imaginarios y realidades de la cultura contemporánea, evidenciamos la dimensión curatorial desde diferentes campos de acción.</p>
-
+           
         </div>
         <Integrantes></Integrantes>
     </div>)
@@ -15,7 +18,17 @@ export default function Nosotras(props) {
 
 export function Integrantes() {
     return (<div className="integrantes">
-        <div className="integrante"><span>Emlya Rendon</span></div>
-        <div className="integrante"><span>Adriana Flores</span></div>
+       <Integrante foto={Emi}></Integrante>
+       <Integrante foto={Adriana}></Integrante>
+      
+    </div>)
+}
+
+export function Integrante(props) {
+    return (<div className="integrante"><img src={ props.foto}></img>
+    <div className="int-info">
+        <p><b>Artista y curadora independiente</b></p>
+        <p><i>Co fundadora de intercuraduria</i></p>
+    </div>
     </div>)
 }

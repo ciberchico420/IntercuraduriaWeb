@@ -1,5 +1,5 @@
 @import '../../exports.module.scss';
-.proac-container{
+.proac-card{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -13,6 +13,7 @@
     padding: 20px;
     font-size: 20px;
     margin-bottom: 40px;
+    border:2px solid $blue1;
 
     & .presentacion{
         padding: 10px;
@@ -23,20 +24,32 @@
     }
     & .imagen{
         width: 100%;
-        height: 300px;
-        background-image: url("../../../assets/img/proac.png");
+        height: 100px;
+        background-image: url("../../../assets/img/Proac logo.png");
         background-size: contain;
         background-repeat: no-repeat;
         background-position: center;
+        margin-top: 10px;
     }
     & .correo{
         color:$mainColor;
         font-weight: bold;
     }
 }
+.proac-container{
+    background:url("../../../assets/img/Fondo para Proac.png");
+    background-size:cover;
+    background-position:center;
+    background-repeat: no-repeat;
+    margin-top: 0;
+    padding-top: 0;
+    padding-bottom: 140px;
+    border-bottom: 2px solid black;
+    //background-color: white;
+}
 
 @media screen and (max-width:800px) {
-    .proac-container{
+    .proac-card{
         margin-left: 10px;
         margin-right: 10px;
     }

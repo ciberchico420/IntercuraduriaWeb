@@ -24,7 +24,7 @@ import {HiMenu} from 'react-icons/hi'
 
 export default function ContentManager(props) {
     const location = useLocation()
-
+    const isMobile = useMediaQuery("screen and (max-width: 1000px)")
     const [showContent, setShowContent] = useState(false);
     const [inPage, setInPage] = useState(false);
     useEffect(() => {
@@ -35,7 +35,7 @@ export default function ContentManager(props) {
     
 
     const history = useHistory()
-    const isMobile = useMediaQuery("screen and (max-width: 800px)")
+ 
 
     useEffect(() => {
      if(isMobile == false){
