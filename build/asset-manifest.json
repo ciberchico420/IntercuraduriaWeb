@@ -1,0 +1,28 @@
+{
+  "files": {
+    "main.css": "/static/css/main.afefb209.chunk.css",
+    "main.js": "/static/js/main.2f39afe3.chunk.js",
+    "main.js.map": "/static/js/main.2f39afe3.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.750040ac.js",
+    "runtime-main.js.map": "/static/js/runtime-main.750040ac.js.map",
+    "static/js/2.26684cd3.chunk.js": "/static/js/2.26684cd3.chunk.js",
+    "static/js/2.26684cd3.chunk.js.map": "/static/js/2.26684cd3.chunk.js.map",
+    "static/js/3.e45965e6.chunk.js": "/static/js/3.e45965e6.chunk.js",
+    "static/js/3.e45965e6.chunk.js.map": "/static/js/3.e45965e6.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/main.afefb209.chunk.css.map": "/static/css/main.afefb209.chunk.css.map",
+    "static/js/2.26684cd3.chunk.js.LICENSE.txt": "/static/js/2.26684cd3.chunk.js.LICENSE.txt",
+    "static/media/Adriana.5a4ae077.png": "/static/media/Adriana.5a4ae077.png",
+    "static/media/home.scss": "/static/media/Heebo.06b31cf4.ttf",
+    "static/media/Emi.98f50c6b.png": "/static/media/Emi.98f50c6b.png",
+    "static/media/proac.scss": "/static/media/Proac logo.ca244ecd.png",
+    "static/media/circulo.ec2627f0.png": "/static/media/circulo.ec2627f0.png",
+    "static/media/Lightbox.scss": "/static/media/fondo-nosotras.6b8cac40.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.750040ac.js",
+    "static/js/2.26684cd3.chunk.js",
+    "static/css/main.afefb209.chunk.css",
+    "static/js/main.2f39afe3.chunk.js"
+  ]
+}
