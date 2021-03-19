@@ -17,7 +17,7 @@ export function Contacto() {
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(datos)
             };
-            fetch('http://localhost:3080/api/contacto', requestOptions)
+            fetch('https://intercuraduria.com/api/contacto', requestOptions)
                 .then(response => response.json())
                 .then(data => console.log(data));
 
