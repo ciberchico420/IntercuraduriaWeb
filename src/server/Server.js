@@ -109,7 +109,7 @@ var enviarMailContacto = (datos)=>{
   var mailToAdmins = {
       from: protected.adminmail,
       to: protected.adminmail,
-      subject: 'Nuevo contacto de'+datos.nombre,
+      subject: 'Nuevo contacto de '+datos.nombre,
       html: logo+'<div style="background:#4c56ac; color:white; padding:20px; border-radius:10px;font-size:1rem"><h3>¡Hola! una nueva persona ha intentado contactarlas.</h3><div ><p>Sus datos son los siguientes:</p><div style="border:1px solid white; border-radius:20px; padding:10px;width:30%;background-color:white;color: black;"><ul><li>Nombre: '+datos.nombre+'</li><li>Correo: '+datos.mail+'</li><li>Comentarios: '+datos.comentarios+'</li></ul></div></div></div>'
     };
 
