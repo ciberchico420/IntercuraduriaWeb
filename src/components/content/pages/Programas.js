@@ -134,7 +134,7 @@ function Registering(props) {
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(datos)
             };
-            fetch('http://intercuraduria.com/api/register', requestOptions)
+            fetch('http://localhost:3080/api/register', requestOptions)
                 .then(response => response.json())
                 .then(data => console.log(data));
 

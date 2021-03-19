@@ -95,7 +95,7 @@ export default function ContentManager(props) {
             <DRoute open={openPage} showContent={showContent} path={"/proac"} child={<ProAc/>}>
             </DRoute>
 
-            {inPage &&  <div className="footer"><div className="footer-logo"><Logo></Logo><span className="name">Intercuraduria 2021<br></br>contacto@intercuraduria.com</span></div><SocialIcons></SocialIcons></div>}
+            {inPage &&  <div className="footer"><div className="footer-logo"><Logo></Logo><span className="name">Intercuraduria 2021<br></br>intercuraduria@gmail.com</span></div><SocialIcons></SocialIcons></div>}
     
 
     </animated.div>)

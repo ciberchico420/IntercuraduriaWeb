@@ -7,15 +7,16 @@ export function ProAc(props) {
             <div className="imagen"></div>
             <div className="presentacion">
 
+                <p>Programa de Acompañamiento Creativo</p>
+                <p>Te presentamos <span>PROAC</span>, nuestro programa de acompañamientos creativos que permiten 
+                la comunicación entre artistas, curadores o algún otrx agente cultural.</p>
 
-                <p>Te presentamos <span>PROAC</span>, nuestro programa de acompañamientos creativos que permiten la comunicación entre artistas, curadores o algún otro agente cultural.</p>
-
-                <p> Intercuraduria ofrece asesorías creativas para que tus proyectos tengan un mejor desarrollo.
-                <br />Ten la confianza de platicar de alguna pieza que se te haya ocurrido en un espacio seguro.</p>
+                <p> PROAC te ofrece un espacio seguro y privado de asesoramiento personalizado para potenciar tus proyectos.</p>
+                <p>Todas las ideas son buenas por lo cual hay que cuidarlas, procurarlas y potenciarlas.</p>
 
 
                 <p>¿Quieres saber más de este programa?
-        <br />Manda un mensaje a <a className="correo" href="mailto: intercuraduriaproac@gmail.com">intercuraduriaproac@gmail.com</a></p>
+                    <br />Manda un mensaje a <a className="correo" href="mailto: intercuraduriaproac@gmail.com">intercuraduriaproac@gmail.com</a></p>
             </div>
         </div>
 
