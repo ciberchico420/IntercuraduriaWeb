@@ -1,15 +1,45 @@
-import React from 'react';
+import React,{useState} from 'react';
 import './Contacto.scss'
 
 export function Contacto() {
+    const [datos, setDatos] = useState({
+        nombre: "",
+        mail: "",
+        comentarios: "",
+    })
+
+    const enviarFormulario = () => {
+        console.log("Datos",datos)
+        if (datos.nombre !== "" && (datos.mail !== "")) {
+            
+            const requestOptions = {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(datos)
+            };
+            fetch('http://localhost:3080/api/contacto', requestOptions)
+                .then(response => response.json())
+                .then(data => console.log(data));
+
+            console.log("Enviado formulario")
+        } else {
+            //Error
+           
+        }
+    }
+
+    const onChange = (e) => {
+        setDatos({ ...datos, [e.target.name]: e.target.value })
+    }
+
     return (<div className="contacto">
         <div className="formulario">
             <h2>¡Únete a nuestra comunidad!</h2>
             <form>
-                <input name="nombre" placeholder="Nombre"></input>
-                <input name="correo" placeholder="Correo"></input>
-                <textarea placeholder="Déjanos un comentario..."></textarea>
-                <div className="button">Enviar</div>
+                <input onChange={onChange} name="nombre" placeholder="Nombre"></input>
+                <input onChange={onChange}  name="mail" placeholder="Correo"></input>
+                <textarea onChange={onChange}  placeholder="Déjanos un comentario..." name="comentarios"></textarea>
+                <div className="button" onClick={enviarFormulario}>Enviar</div>
             </form>
 
         </div>
