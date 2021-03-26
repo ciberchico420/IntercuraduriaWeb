@@ -40,9 +40,9 @@ export default function Programas(props) {
     }, [props.category])
     return (<div><h1 className="titlePrograma"><span>{props.type}</span></h1>
         <div className="infoPrograma">
-            <div className="activos-moto">
+           
                 <span className="moto">Intercuraduria ofrece programas educativos para dialogar, debatir y compartir conocimientos e inquietudes entorno a la práctica curatorial y artística desde diferentes posicionamientos actuales.</span>
-            </div>
+            
         </div>
         <div className="category">
 
@@ -69,7 +69,7 @@ function ProgramaItem(props) {
     }
     const location = useLocation();
     const pathArr = location.pathname.split("/");
-
+console.log("ke pasa")
     useEffect(()=>{
         if(pathArr[2]==props.item.id){
             setOpen(true)

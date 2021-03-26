@@ -1,4 +1,4 @@
-@import '../main.scss';
+@import "../main.scss";
 
 .logo {
     z-index: 100;
@@ -15,9 +15,7 @@
             color: $blue1;
         }
     }
-
 }
-
 
 .homeContainer {
     display: grid;
@@ -50,11 +48,10 @@
     & svg {
         color: $mainColor;
     }
-    & a{
+    & a {
         text-decoration: none;
         color: inherit;
     }
-
 }
 
 .has-submenu {
@@ -73,9 +70,9 @@
         background-color: transparent;
         padding: 0;
         font-family: Heebo;
-        font-size: $subMenuFontSize+vh;
+        font-size: $subMenuFontSize + vh;
         color: $secondaryColor;
-        transition: font-size .5s;
+        transition: font-size 0.5s;
         padding-right: 2px;
         cursor: pointer;
 
@@ -85,8 +82,6 @@
             color: $darkenColor;
         }
     }
-
-
 }
 
 .menuItemLine {
@@ -116,7 +111,7 @@
         padding: 10px;
         color: $mainColor;
         background-color: white;
-        transition: padding .5s, background-color .5s, color .5s;
+        transition: padding 0.5s, background-color 0.5s, color 0.5s;
         font-size: 2vh;
         cursor: pointer;
 
@@ -130,8 +125,6 @@
             background-color: $mainColor;
         }
     }
-
-
 }
 
 .sideMenu {
@@ -153,17 +146,19 @@
     align-items: center;
     justify-content: space-evenly;
     flex-grow: 1;
-    transition: background-color .4s, color .4s;
+    transition: border 0.4s, color 0.4s;
     align-content: space-between;
     margin-bottom: 20%;
     user-select: none;
     padding: 10px;
     cursor: pointer;
     border-radius: 0 0 50px 50px;
+    min-width: 180px;
+    border: 3px solid white;
 
+    color:$blue1;
     &:hover {
-        background-color: $purple3;
-        color: white;
+        border: 3px solid $blue1;
     }
 
     &:first-child {
@@ -171,7 +166,7 @@
     }
 }
 
-.social-icons{
+.social-icons {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -180,7 +175,7 @@
     text-align: center;
     margin-top: 40px;
     color: $purple2;
-    & .icons a{
+    & .icons a {
         color: $purple2;
         padding: 10px;
         font-size: 30px;
@@ -188,8 +183,8 @@
     }
 }
 
-@media screen and (max-width:1000px) {
-    .social-icons{
+@media screen and (max-width: 1000px) {
+    .social-icons {
         grid-column: 1;
     }
     .homeContainer {
@@ -199,13 +194,11 @@
     .sideMenuItem {
         margin-top: 10px;
         border-radius: 50px;
-        
     }
 
     .sideMenu {
         grid-column: 1;
         margin-right: 0;
-        
     }
 
     .menu {
@@ -226,19 +219,20 @@
                 font-size: 4.5vh;
             }
         }
-
     }
 
     .logo {
         & span {
             font-size: 60px;
         }
-
     }
 
     .sideMenuItem {
         justify-content: center;
         margin-left: 10px;
         margin-right: 10px;
+        &:hover {
+            border-top: 3px solid $purple2;
+        }
     }
 }

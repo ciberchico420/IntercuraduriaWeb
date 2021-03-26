@@ -85,25 +85,6 @@
     }
 }
 
-.closeContent {
-    position: fixed;
-    right: 15px;
-    top: 0px;
-    font-size: 2rem;
-    cursor: pointer;
-    color: white;
-    user-select: none;
-    border-radius: 0px 0px 30px 30px;
-    padding: 20px;
-    padding-top: 60px;
-    padding-bottom: 10px;
-    background-color: black;
-
-    &:hover {
-        background-color: $mainColor;
-        color: white;
-    }
-}
 .footer {
     display: flex;
     flex-direction: column;

@@ -12,7 +12,6 @@
     overflow: hidden;
     padding: 20px;
     font-size: 20px;
-    margin-bottom: 40px;
     border:2px solid $blue1;
 
     & .presentacion{
@@ -41,9 +40,8 @@
     background-size:cover;
     background-position:center;
     background-repeat: no-repeat;
-    margin-top: 0;
-    padding-top: 0;
-    padding-bottom: 140px;
+    min-height: 80vh;
+
     border-bottom: 2px solid black;
     //background-color: white;
 }

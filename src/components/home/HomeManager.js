@@ -8,7 +8,7 @@ import { useSpring, animated, config } from 'react-spring'
 
 import Colors from '../exports.module.scss'
 import { RiArrowDropDownLine } from 'react-icons/ri';
-import { FaFacebook, FaInstagram } from 'react-icons/fa'
+import { FaFacebook, FaInstagram, FaTwitter } from 'react-icons/fa'
 import {RiContactsBook2Line} from 'react-icons/ri'
 
 function HomeManager(props) {
@@ -59,7 +59,9 @@ export function SocialIcons(props) {
     return (<div className="social-icons">
         <div className="icons">
             <a href="https://www.facebook.com/Intercuraduria-101411698614498" target="_blank"><FaFacebook /></a>
-            <a href="https://www.instagram.com/intercuraduria" target="_blank"><FaInstagram /></a></div>
+            <a href="https://www.instagram.com/intercuraduria" target="_blank"><FaInstagram /></a>
+            <a href="https://www.twitter.com/intercuraduria" target="_blank"><FaTwitter /></a>
+            </div>
     </div>)
 }
 function MenuItem(props) {
