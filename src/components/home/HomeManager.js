@@ -15,7 +15,7 @@ function HomeManager(props) {
 
     return (<div className="homeContainer">
         <div className="sideMenu">
-            <SideMenuItem path="/nosotras">Nosotras</SideMenuItem>
+            <SideMenuItem path="/acercade">Acerca de</SideMenuItem>
             <SideMenuItem path="/contacto">Contacto</SideMenuItem>
 
 
@@ -94,7 +94,7 @@ function MenuItem(props) {
         if (props.link != undefined) {
             let path = location.pathname.split("/")[1];
             if (path == props.link.replace("/", "")) {
-                console.log("In page ", path)
+
                 setInPage(true);
             }else{
                 setInPage(false);

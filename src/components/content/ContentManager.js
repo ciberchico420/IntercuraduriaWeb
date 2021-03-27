@@ -64,6 +64,7 @@ export default function ContentManager(props) {
     const closePage = () => {
         setInPage(false)
         setShowContent(false);
+        setOpenMenu("hidden");
     }
     const clickMenu = ()=>{
         if(openMenu == "hidden"){

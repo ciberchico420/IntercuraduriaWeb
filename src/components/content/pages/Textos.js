@@ -121,14 +121,6 @@ function OpenPost(props) {
          
            
                 <div className="entry-title">{ReactHtmlParser(props.value.title.rendered)}</div>
-                <div className="info">
-                    <div className="author-date">
-                       
-                        <div className="date"><BsCalendarFill style={{ marginRight: "3px" }}></BsCalendarFill>{date.getDay() + "/" + date.getMonth() + "/" + date.getFullYear()}</div>
-                    </div>
-                </div>
-           
-           
 
             <div className="entry-content post-inner thin" ref={postRef}>
                 {ReactHtmlParser(props.value.content.rendered)}

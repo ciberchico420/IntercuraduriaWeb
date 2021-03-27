@@ -9,9 +9,10 @@ import { Contacto } from './pages/Contacto';
 
 export default function SideContentManager() {
     const [open, setOpen] = useState(false);
-    const spring = useSpring({ width: open ? "100%" : "0%", config: config.stiff })
+   
     const location = useLocation()
     const history = useHistory();
+    const spring = useSpring({ width: open ? "100%" : "0%", config: config.stiff })
 
 
     useEffect(() => {
@@ -30,9 +31,10 @@ export default function SideContentManager() {
         console.log("close")
     }
     return (<animated.div id="sideContentManager" style={spring}>
+        
         <div className="side-close-content" onClick={closePage}><FaArrowAltCircleRight></FaArrowAltCircleRight></div>
         <div className="side-content">
-            <DRoute path="/nosotras" showContent={true} open={openBar} child={<Nosotras></Nosotras>}></DRoute>
+            <DRoute path="/acercade" showContent={true} open={openBar} child={<Nosotras></Nosotras>}></DRoute>
             <DRoute path="/contacto" showContent={true} open={openBar} child={<Contacto></Contacto>}></DRoute>
         </div>
 

@@ -69,7 +69,6 @@ function ProgramaItem(props) {
     }
     const location = useLocation();
     const pathArr = location.pathname.split("/");
-console.log("ke pasa")
     useEffect(()=>{
         if(pathArr[2]==props.item.id){
             setOpen(true)
