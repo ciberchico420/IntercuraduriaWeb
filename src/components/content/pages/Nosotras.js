@@ -21,15 +21,16 @@ export default function Nosotras(props) {
 
 export function Integrantes() {
     return (<div className="integrantes">
-        <Integrante foto={Emi} des1={"Artista y curadora independiente"} des2="Co fundadora de Intercuraduria"></Integrante>
-        <Integrante foto={Adriana} des1={"Gestora cultural y curadora independiente"} des2="Co fundadora de Intercuraduria"></Integrante>
+        <Integrante foto={Emi} des1={"Artista y curadora independiente"} des2="Co fundadora de Intercuraduria" nombre={"Emiliya Rendón"}></Integrante>
+        <Integrante foto={Adriana} des1={"Gestora cultural y curadora independiente"} des2="Co fundadora de Intercuraduria"  nombre={"Adriana Flores"}></Integrante>
 
     </div>)
 }
 
-export function Integrante({ foto, des1, des2 }) {
+export function Integrante({ foto, des1, des2,nombre }) {
     return (<div className="integrante"><img src={foto}></img>
         <div className="int-info">
+            <p>{nombre}</p>
             <p><b>{des1}</b></p>
             <p><i>{des2}</i></p>
         </div>
