@@ -89,3 +89,5 @@ function Celular(props) {
     return (<div className="celular">
     </div>)
 }
+
+
