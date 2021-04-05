@@ -1,0 +1,110 @@
+.container-of-containers{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+.laboratorio-container{
+    $size:50vw;
+    background-image: url("../../../../assets/img/laboratorio/fondo.png");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: ($size*.86);
+    width: $size;
+    border-radius: 25px;
+    overflow: hidden;
+    position: relative;
+    margin: 10px;
+    border: 2px solid rgb(216, 216, 216);
+}
+.presentacion{
+    width: 100%;
+    height: 100%;
+    background-color: rgb(203, 218, 180);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 5rem;
+    & button{
+        padding: 20px;
+        font-size: 4rem;
+    }
+}
+
+.mantel-container{
+    position:relative;
+    height: 50%;
+    width: 50%;
+    background-image: url("../../../../assets/img/laboratorio/mantel.png");
+    background-size:contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    top:25%;
+    left: 15%;
+    &>div:hover{
+        animation: shake 0.5s;
+        animation-iteration-count: infinite;
+    }
+}
+
+.huevo{
+    $size:45%;
+    //border:1px solid black;
+    background-image: url("../../../../assets/img/laboratorio/huevo.png");
+    background-size:contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: $size;
+    height: $size;
+    position: absolute;
+    top:20%;
+    right: 30%;
+    
+}
+
+.cafe{
+    //border:1px solid black;
+    background-image: url("../../../../assets/img/laboratorio/cafe.png");
+    background-size:contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 20%;
+    height: 25%;
+    position: absolute;
+    right: 15%;
+    top:50%;
+}
+
+.papaya{
+
+   // border:1px solid black;
+    background-image: url("../../../../assets/img/laboratorio/papaya.png");
+    background-size:contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 20%;
+    height: 30%;
+    position: absolute;
+    right: 26%;
+    top:70%;
+}
+
+
+/**Animations
+*/
+@keyframes shake {
+    0% { transform: translate(1px, 1px) rotate(0deg); }
+    10% { transform: translate(-1px, -2px) rotate(-1deg); }
+    20% { transform: translate(-3px, 0px) rotate(1deg); }
+    30% { transform: translate(3px, 2px) rotate(0deg); }
+    40% { transform: translate(1px, -1px) rotate(1deg); }
+    50% { transform: translate(-1px, 2px) rotate(-1deg); }
+    60% { transform: translate(-3px, 1px) rotate(0deg); }
+    70% { transform: translate(3px, 1px) rotate(-1deg); }
+    80% { transform: translate(-1px, -1px) rotate(1deg); }
+    90% { transform: translate(1px, 2px) rotate(0deg); }
+    100% { transform: translate(1px, -2px) rotate(-1deg); }
+  }

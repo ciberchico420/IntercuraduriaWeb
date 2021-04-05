@@ -19,6 +19,7 @@ import { ProAc } from './pages/ProAc';
 import {Tienda} from './pages/Tienda'
 import { useMediaQuery } from '@react-hook/media-query';
 import {HiMenu} from 'react-icons/hi'
+import Laboratorio from './pages/laboratorio/Laboratorio'
 
 
 
@@ -92,6 +93,8 @@ export default function ContentManager(props) {
             <DRoute open={openPage} showContent={showContent} path={"/cursos"} child={<Programas category="4" type="Cursos"></Programas>}>
             </DRoute>
             <DRoute open={openPage} showContent={showContent} path={"/talleres"} child={<Programas category="5" type="Talleres"></Programas>}>
+            </DRoute>
+            <DRoute open={openPage} showContent={showContent} path={"/laboratorio"} child={<Laboratorio/>}>
             </DRoute>
             <DRoute open={openPage} showContent={showContent} path={"/proac"} child={<ProAc/>}>
             </DRoute>
