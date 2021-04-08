@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import { useSpring, animated } from 'react-spring';
 import './Laboratorio.scss'
+import {GrLinkNext} from 'react-icons/gr'
+import {VscDebugRestart} from 'react-icons/vsc'
 
 export default function Laboratorio(props) {
     const [enPresentacion, setPresentacion] = useState(true);
@@ -31,7 +33,7 @@ export default function Laboratorio(props) {
                             <Mantel></Mantel>
                         </SlideItem>
                         <SlideItem>
-                            Página final
+                            <PaginaFinal></PaginaFinal>
                         </SlideItem>
                     </Slider>
                     :
@@ -48,37 +50,40 @@ function Slider({ children }) {
         var clonedElementWithMoreProps = React.cloneElement(
             children[a],
 
-            { active: a == active ? true : false, key: a }
+            { active: a == active ? true : false, key: a,setActive:setActive }
         );
         newChildren.push(clonedElementWithMoreProps);
     }
-    const goNext = ()=>{
-        if(isValid(active+1)){
-           setActive(active+1); 
+    const goNext = () => {
+        if (isValid(active + 1)) {
+            setActive(active + 1);
+        }else{
+            setActive(0);
         }
-        
-    }
-    const goBack = ()=>{
-        if(isValid(active-1)){
-            setActive(active-1); 
-        }
-       
-    }
 
-    const isValid  = (newNum)=>{
-        return(newNum >= 0 && newNum < children.length)
     }
 
 
-    console.log(newChildren)
+    const isValid = (newNum) => {
+        return (newNum >= 0 && newNum < children.length)
+    }
 
-    return (<div className="slider">{newChildren}<button onClick={goNext} style={{ top: 0 ,right:0,position:"absolute"}}>Next</button>
-    <button onClick={goBack} style={{ bottom: 0 ,left:0,position:"absolute"}}>Back</button>
-    </div>)
+    return (
+        <div className="slider">
+            {newChildren}
+            <GoNext goNext={goNext} active={active}  max={children.length-1}></GoNext>
+        </div>
+    )
+}
+function GoNext({ goNext,active,max }) {
+    const text = active<max?
+    <div className="nextBtnText"><GrLinkNext></GrLinkNext> Siguiente </div>
+    :<div className="nextBtnText"><VscDebugRestart></VscDebugRestart> Reiniciar</div>;
+    return (<div className="goNextBtn"><button onClick={goNext}>{text}</button></div>)
 }
 function SlideItem(props) {
     console.log(props)
-    const spring = useSpring({ top: props.active ? "0%" : "120%",position:"absolute" })
+    const spring = useSpring({ top: props.active ? "0%" : "120%", position: "absolute" })
     return (<animated.div style={spring} className="items-container">
         {props.children}
     </animated.div>)
@@ -102,6 +107,9 @@ function Presentacion(props) {
             <button onClick={() => { props.set(false) }}>Iniciar</button>
         </animated.div>
         <p></p></div>)
+}
+function PaginaFinal(){
+    return (<div className="paginaFinal">Página final</div>)
 }
 function Mantel(props) {
     return (<div className="mantel-container">
