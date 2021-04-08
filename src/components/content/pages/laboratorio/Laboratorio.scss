@@ -1,3 +1,10 @@
+.slider{
+    height: 100%;
+    width: 100%;
+    position: relative;
+}
+
+
 .container-of-containers {
     width: 100%;
     display: flex;
@@ -26,15 +33,39 @@
 .presentacion {
     width: 100%;
     height: 100%;
-    background-color: rgb(203, 218, 180);
+    background-image: url("../../../../assets/img/laboratorio/portada.png");
+    background-position: center;
+    background-size: 100% ;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    font-size: 5rem;
+    position: relative;
     & button {
+        border-radius: 20px;
         padding: 20px;
-        font-size: 4rem;
+        margin: 20px;
+        font-size: 2rem;
+        border: 2px solid black;
+        cursor: pointer;
+    }
+    & .info{
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        bottom: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        background-color: rgba(0, 0, 0, 0.534);
+        font-size: 2rem;
+        text-align: center;
+        color: white;
+        & .nombre{
+            font-weight: bold;
+            font-size: 3rem;
+        }
     }
 }
 
@@ -200,6 +231,22 @@ $cucharayTenedorSize: 25%;
     position: absolute;
     right: 12%;
     top: 70%;
+}
+
+.cuerpo {
+    $size: 60%;
+    // border:1px solid black;
+    background-image: url("../../../../assets/img/laboratorio/cuerpo.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: $size;
+    height: $size;
+    position: absolute;
+    left:-10%;
+    top: 20%;
+    user-select: none;
+    pointer-events: none;
 }
 
 @media screen and (max-width: 600px) {
