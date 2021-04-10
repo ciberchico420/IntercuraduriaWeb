@@ -41,7 +41,6 @@ export function useLightBox(html) {
             imgsToAdd.push(<img src={images[i].src}></img>)
         }
 
-        console.log(images[index].src)
         ReactDOM.render(<div className="lightbox">
             <div className="s-image">{imgsToAdd[index]}</div>
         </div>, container)

@@ -113,7 +113,6 @@ function ProgramaItem(props) {
     </div>)
 }
 function Registering(props) {
-    console.log(props.item.title)
     const [enviado, setEnviado] = useState(0);
     const [datos, setDatos] = useState({
         nombre: "",

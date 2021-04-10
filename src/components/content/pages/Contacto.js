@@ -9,7 +9,6 @@ export function Contacto() {
     })
 
     const enviarFormulario = () => {
-        console.log("Datos",datos)
         if (datos.nombre !== "" && (datos.mail !== "")) {
             
             const requestOptions = {
