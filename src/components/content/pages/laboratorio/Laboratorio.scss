@@ -46,28 +46,23 @@ $animationTime: 2s;
 }
 
 .goNextBtn {
+    $size :60px;
     top: 10px;
     right: 10px;
+    width: $size;
+    height: $size;
+    background-image: url("../../../../assets/img/laboratorio/asterisco.png");
+    background-size: 60%;
+    background-repeat: no-repeat;
+    background-color: white;
+    background-position: center;
     position: absolute;
     opacity: 0.8;
-    & button {
-        font-size: 20px;
-        border: 3px solid $blue2;
-        padding: 20px;
-        background: rgba(255, 255, 255, 0.192);
-        border-radius: 20px;
-        color: $blue2;
-        font-weight: bold;
-        &:active,
-        :focus {
-            outline: none;
-            background: #979df048;
-        }
-    }
-    &:active,
-    :focus {
-        outline: none;
-    }
+    border-radius: 100%;
+    cursor: pointer;
+    z-index: 100000;
+    border: 2px solid #e531af;
+    
 }
 
 .container-of-containers {
@@ -98,7 +93,7 @@ $animationTime: 2s;
 .presentacionLaboratorio {
     width: 100%;
     height: 100%;
-    background-image: url("../../../../assets/img/laboratorio/portada.png");
+    background-image: url("../../../../assets/img/laboratorio/inicio.JPG");
     background-position: center;
     background-size: 100%;
     display: flex;
@@ -115,6 +110,9 @@ $animationTime: 2s;
         background-position: center;
         background-repeat: no-repeat;
         background-size: contain;
+        position: absolute;
+        top: 20px;
+        right: 20px;
         background-image: url("../../../../assets/img/laboratorio/entrada.png");
     }
     & .info {
@@ -191,6 +189,7 @@ $animationTime: 2s;
     position: absolute;
     top: 20%;
     right: 30%;
+    cursor: pointer;
     &:hover {
         animation: shake $animationTime;
         animation-iteration-count: infinite;
@@ -221,6 +220,7 @@ $animationTime: 2s;
     position: absolute;
     right: 26%;
     top: 70%;
+    cursor: pointer;
     &:hover {
         animation: shake $animationTime;
         animation-iteration-count: infinite;
@@ -263,6 +263,7 @@ $cucharayTenedorSize: 25%;
     position: absolute;
     right: 49%;
     top: -3.2%;
+    cursor: pointer;
     &:hover {
         animation: shake $animationTime;
         animation-iteration-count: infinite;
@@ -281,6 +282,7 @@ $cucharayTenedorSize: 25%;
     position: absolute;
     right: 5%;
     top: 4%;
+    cursor: pointer;
     &:hover {
         animation: shake $animationTime;
         animation-iteration-count: infinite;
@@ -313,6 +315,7 @@ $cucharayTenedorSize: 25%;
     position: absolute;
     right: 20%;
     top: 25%;
+    cursor: pointer;
     &:hover {
         animation: shake $animationTime;
         animation-iteration-count: infinite;
@@ -337,6 +340,7 @@ $cucharayTenedorSize: 25%;
     position: absolute;
     right: 15%;
     top: 46%;
+    cursor: pointer;
     &:hover {
         animation: shake $animationTime;
         animation-iteration-count: infinite;
@@ -403,6 +407,20 @@ $cucharayTenedorSize: 25%;
     background-size: 100%;
     background-repeat: no-repeat;
     height: 100%;
+}
+.primerDibujo{
+    background-image: url("../../../../assets/img/laboratorio/primerdibujo.png");
+    background-position: center;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    height: 100%;
+    position: relative;
+    & button{
+        position: absolute;
+        right:20px;
+        top:20px;
+        padding: 20px;
+    }
 }
 
 @media screen and (max-width: 600px) {

@@ -14,6 +14,9 @@ export default function Laboratorio(props) {
                 {!enPresentacion ?
                     <Slider setActive={setActive} active={active}>
                         <SlideItem>
+                           <PrimerDibujo set={setActive}></PrimerDibujo>
+                        </SlideItem>
+                        <SlideItem>
                             <Mantel>
                                 <Huevo set={setActive}>
                                 </Huevo>
@@ -71,18 +74,18 @@ function Slider({ children, setActive, active }) {
         newChildren.push(clonedElementWithMoreProps);
     }
     const goNext = () => {
-        setActive(0)
+        setActive(1)
 
     }
     return (
         <div className="slider">
             {newChildren}
-            {active != 0 && <HomeButton goNext={goNext} active={active} max={children.length - 1}></HomeButton>}
+            {active >1 && <HomeButton goNext={goNext} active={active} max={children.length - 1}></HomeButton>}
         </div>
     )
 }
 function HomeButton({ goNext, active, max }) {
-    return (<div className="goNextBtn"><button onClick={goNext}>Home</button></div>)
+    return (<div className="goNextBtn" onClick={goNext}></div>)
 }
 function SlideItem(props) {
     const spring = useSpring({ top: props.active ? "0%" : "120%", position: "absolute" })
@@ -91,33 +94,9 @@ function SlideItem(props) {
     </animated.div>)
 }
 function Presentacion(props) {
-    const isMobile = useMediaQuery("screen and (max-width: 1000px)")
-    const [hover, setHover] = useState(false)
-    const [init, setInit] = useState(false)
-    const spring = useSpring({ bottom: hover ? "0%" : "-100%" })
-
-    let int = setTimeout(() => {
-        if (!init) {
-            setHover(true);
-            setInit(true);
-        }
-
-    }, 3000);
-    return (<div className="presentacionLaboratorio" onPointerEnter={() => { setHover(true) }} onPointerDown={()=>{setHover(true)}} 
-    onPointerLeave={() => { 
-        if(!isMobile){
-            setHover(false)
-        }
-         }}>
-        <animated.div className="info" style={spring}>
-            <div className="nombre">Poner la mesa, darse el tiempo</div>
-            <div>Acompañamiento creativo entre Viviana Reyes y Adriana Flores</div>
-            <div className="about-laboratorio">La siguiente muestra de dibujos contiene elementos animados que se activan al pasar el cursor encima, desplegando contenido adicional.
-    
-                Para una mejor experiencia sugerimos usar un navegador de escritorio.</div>
-            <button onClick={() => { props.set(false) }}></button>
-        </animated.div>
-        <p></p></div>)
+    return (<div className="presentacionLaboratorio" >
+        <button onClick={() => { props.set(false) }}></button>
+    </div>)
 }
 function PaginaFinal() {
     return (<div className="paginaFinal">Página final</div>)
@@ -130,7 +109,7 @@ function Mantel(props) {
 
 function Huevo({ set }) {
     return (<div className="huevo" onClick={() => {
-        set(2)
+        set(3)
     }}>
         <MessageCan></MessageCan>
     </div>)
@@ -143,7 +122,7 @@ function Cafe(props) {
 
 function Papaya({ set }) {
     return (<div className="papaya" onClick={() => {
-        set(3)
+        set(4)
     }}>
         <MessageCan></MessageCan>
     </div>)
@@ -168,7 +147,7 @@ function Servilleta({ set }) {
 
 function Olla({ set }) {
     return (<div className="olla" onClick={() => {
-        set(4)
+        set(5)
     }}>
         <MessageCan></MessageCan>
     </div>)
@@ -179,13 +158,13 @@ function Cuaderno(props) {
 }
 function Salero({ set }) {
     return (<div className="salero" onClick={() => {
-        set(6)
+        set(7)
     }}>
         <MessageCan></MessageCan>
     </div>)
 }
 function Ipad({ set }) {
-    return (<div className="ipad" onClick={() => { set(1) }}>
+    return (<div className="ipad" onClick={() => { set(2) }}>
         <MessageCan></MessageCan>
     </div>)
 }
@@ -208,7 +187,11 @@ function VideoSlide({ url }) {
         <iframe width="560" height="315" src={url} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </div>)
 }
-
+function PrimerDibujo({set}){
+    return(<div className="primerDibujo">
+        <button onClick={()=>{set(1)}}>Siguiente</button>
+    </div>)
+}
 function EnsambleImagenes(){
     return(<div className="ensambleImagenes"></div>)
 }
