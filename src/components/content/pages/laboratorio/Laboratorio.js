@@ -3,6 +3,7 @@ import { useSpring, animated } from 'react-spring';
 import './Laboratorio.scss'
 import { GrLinkNext } from 'react-icons/gr'
 import { VscDebugRestart } from 'react-icons/vsc'
+import { useMediaQuery } from '@react-hook/media-query';
 
 export default function Laboratorio(props) {
     const [enPresentacion, setPresentacion] = useState(true);
@@ -30,8 +31,7 @@ export default function Laboratorio(props) {
                             <Cuerpo></Cuerpo>
                         </SlideItem>
                         <SlideItem>
-                            <div>Cuadricula imagenes</div>
-                            <Mantel></Mantel>
+                        <EnsambleImagenes></EnsambleImagenes>
                         </SlideItem>
 
                         <SlideItem>
@@ -91,6 +91,7 @@ function SlideItem(props) {
     </animated.div>)
 }
 function Presentacion(props) {
+    const isMobile = useMediaQuery("screen and (max-width: 1000px)")
     const [hover, setHover] = useState(false)
     const [init, setInit] = useState(false)
     const spring = useSpring({ bottom: hover ? "0%" : "-100%" })
@@ -102,12 +103,17 @@ function Presentacion(props) {
         }
 
     }, 3000);
-    return (<div className="presentacionLaboratorio" onPointerEnter={() => { setHover(true) }} onPointerLeave={() => { setHover(false) }}>
+    return (<div className="presentacionLaboratorio" onPointerEnter={() => { setHover(true) }} onPointerDown={()=>{setHover(true)}} 
+    onPointerLeave={() => { 
+        if(!isMobile){
+            setHover(false)
+        }
+         }}>
         <animated.div className="info" style={spring}>
             <div className="nombre">Poner la mesa, darse el tiempo</div>
             <div>Acompañamiento creativo entre Viviana Reyes y Adriana Flores</div>
             <div className="about-laboratorio">La siguiente muestra de dibujos contiene elementos animados que se activan al pasar el cursor encima, desplegando contenido adicional.
-                <br></br>
+    
                 Para una mejor experiencia sugerimos usar un navegador de escritorio.</div>
             <button onClick={() => { props.set(false) }}></button>
         </animated.div>
@@ -194,13 +200,17 @@ function Cuerpo(props) {
 }
 
 function MessageCan() {
-    return (<div className="messageInteractive">*</div>)
+    return (<div className="messageInteractive"></div>)
 }
 
 function VideoSlide({ url }) {
     return (<div className="videoSlide">
         <iframe width="560" height="315" src={url} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </div>)
+}
+
+function EnsambleImagenes(){
+    return(<div className="ensambleImagenes"></div>)
 }
 
 function TextoCuratorial() {
@@ -220,16 +230,16 @@ function TextoCuratorial() {
 }
 
 function VideoVivianaPintando() {
-    return (<VideoSlide url="https://www.youtube.com/embed/VRQDOFaFqWk"></VideoSlide>)
+    return (<VideoSlide url="https://www.youtube.com/embed/ESENW7QOGOQ"></VideoSlide>)
 }
 function VideoAcomodandoFrutas() {
-    return (<VideoSlide url="https://www.youtube.com/embed/wPT1FBFJayc"></VideoSlide>)
+    return (<VideoSlide url="https://www.youtube.com/embed/g2KgaatmbOs"></VideoSlide>)
 }
 function VideoRevolviendoTaza() {
-    return (<VideoSlide url="https://www.youtube.com/embed/0dYPYAMxviw"></VideoSlide>)
+    return (<VideoSlide url="https://www.youtube.com/embed/Ttp1EXFqzDw"></VideoSlide>)
 }
 function VideoPicandoAjo() {
-    return (<VideoSlide url="https://www.youtube.com/embed/JRLFr6THaTI"></VideoSlide>)
+    return (<VideoSlide url="https://www.youtube.com/embed/Rtg5jJNo2ZI"></VideoSlide>)
 }
 
 

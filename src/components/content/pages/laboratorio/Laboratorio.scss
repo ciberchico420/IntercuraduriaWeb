@@ -1,5 +1,4 @@
-@import '../../../exports.module.scss';
-
+@import "../../../exports.module.scss";
 
 /**Animations
 */
@@ -40,36 +39,36 @@ $animationTime: 2s;
     }
 }
 
-.slider{
+.slider {
     height: 100%;
     width: 100%;
     position: relative;
 }
 
-.goNextBtn{
+.goNextBtn {
     top: 10px;
     right: 10px;
-    position:absolute;
-    opacity: .8;
-    & button{
+    position: absolute;
+    opacity: 0.8;
+    & button {
         font-size: 20px;
         border: 3px solid $blue2;
         padding: 20px;
-        background:rgba(255, 255, 255, 0.192);
+        background: rgba(255, 255, 255, 0.192);
         border-radius: 20px;
         color: $blue2;
         font-weight: bold;
-        &:active,:focus{
+        &:active,
+        :focus {
             outline: none;
             background: #979df048;
         }
     }
-    &:active,:focus{
+    &:active,
+    :focus {
         outline: none;
     }
-  
 }
-
 
 .container-of-containers {
     width: 100%;
@@ -101,7 +100,7 @@ $animationTime: 2s;
     height: 100%;
     background-image: url("../../../../assets/img/laboratorio/portada.png");
     background-position: center;
-    background-size: 100% ;
+    background-size: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -111,15 +110,14 @@ $animationTime: 2s;
         width: 200px;
         height: 150px;
         background-color: transparent;
-        border:none;
-        font-size: 2rem;
+        border: none;
         cursor: pointer;
         background-position: center;
         background-repeat: no-repeat;
         background-size: contain;
         background-image: url("../../../../assets/img/laboratorio/entrada.png");
     }
-    & .info{
+    & .info {
         position: absolute;
         height: 100%;
         width: 100%;
@@ -129,38 +127,39 @@ $animationTime: 2s;
         align-items: center;
         flex-direction: column;
         background-color: rgba(0, 0, 0, 0.534);
-        font-size: 2rem;
+        font-size: 2vw;
         text-align: center;
         color: white;
-        & .nombre{
+        & .nombre {
             font-weight: bold;
-            font-size: 3rem;
+            font-size: 3vw;
             margin-bottom: 10px;
         }
     }
-    & .about-laboratorio{
+    & .about-laboratorio {
         margin: 10px;
         border-radius: 20px;
-        font-size: 1rem;
+        font-size: 1vw;
         background-color: rgba(0, 0, 0, 0.233);
         padding: 20px;
         width: 80%;
     }
 }
 
-.textoCuratorial{
+.textoCuratorial {
     flex-direction: column;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100%;
     padding: 20px;
-    & .tituloTextoCuratorial{
+    font-size: 1vw;
+    & .tituloTextoCuratorial {
         font-weight: bold;
         font-size: 2rem;
     }
 }
-.paginaFinal{
+.paginaFinal {
     background: rgba(0, 0, 0, 0.315);
     height: 100%;
     display: flex;
@@ -319,7 +318,7 @@ $cucharayTenedorSize: 25%;
         animation-iteration-count: infinite;
     }
 }
-.animation{
+.animation {
     &:hover {
         animation: shake $animationTime;
         animation-iteration-count: infinite;
@@ -368,28 +367,42 @@ $cucharayTenedorSize: 25%;
     width: $size;
     height: $size;
     position: absolute;
-    left:-10%;
+    left: -10%;
     top: 20%;
     user-select: none;
     pointer-events: none;
 }
-.videoSlide{
+.videoSlide {
     background-color: rgba(0, 0, 0, 0.219);
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100%;
 }
-.messageInteractive{
-    $size:30px;
-    border: 2px solid black;
-    border-radius: 20px;
+.messageInteractive {
+    $size: 40px;
+    border: 2px solid #e531af;
+    border-radius: 100%;
     width: $size;
-    height:$size;
+    height: $size;
+    margin-left: -25px;
+    margin-top: -25px;
     background-color: white;
     display: flex;
     justify-content: center;
     align-items: center;
+    background-image: url("../../../../assets/img/laboratorio/asterisco.png");
+    background-position: center;
+    background-size: 60%;
+    background-repeat: no-repeat;
+}
+.ensambleImagenes{
+    margin: 30px;
+    background-image: url("../../../../assets/img/laboratorio/Ensamble.jpg");
+    background-position: center;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    height: 100%;
 }
 
 @media screen and (max-width: 600px) {
@@ -398,4 +411,20 @@ $cucharayTenedorSize: 25%;
         height: ($size * 0.86);
         width: $size;
     }
+    .presentacionLaboratorio {
+        .info {
+            font-size: 3vw;
+            .nombre{
+                font-size: 5vw;
+            }
+        }
+        & .about-laboratorio {
+            font-size: 2.5vw;
+        }
+    }
+    .textoCuratorial {
+        font-size: 2.5vw;
+    }
+
+  
 }
