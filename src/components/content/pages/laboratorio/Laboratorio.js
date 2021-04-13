@@ -59,7 +59,9 @@ export default function Laboratorio(props) {
                     :
                     <Presentacion set={setPresentacion}></Presentacion>
                 }
+               
             </div>
+            <div className="textoCuratorialContainer"><TextoCuratorial></TextoCuratorial></div>
         </div>)
 }
 function Slider({ children, setActive, active }) {
@@ -73,19 +75,29 @@ function Slider({ children, setActive, active }) {
         );
         newChildren.push(clonedElementWithMoreProps);
     }
-    const goNext = () => {
+    const goHome = () => {
         setActive(1)
-
+    }
+    const goNext = ()=>{
+        if(isValid(active+1)){
+           setActive(active+1); 
+        }
+    }
+    const isValid  = (newNum)=>{
+        return(newNum >= 0 && newNum < children.length)
     }
     return (
         <div className="slider">
             {newChildren}
-            {active >1 && <HomeButton goNext={goNext} active={active} max={children.length - 1}></HomeButton>}
+            {active >1 && <HomeButton goHome={goHome} active={active} goNext={goNext} max={children.length - 1}></HomeButton>}
         </div>
     )
 }
-function HomeButton({ goNext, active, max }) {
-    return (<div className="goNextBtn" onClick={goNext}></div>)
+function HomeButton({ goHome, active, max,goNext }) {
+    return (<div style={{display:"flex",flexDirection:"column"}}>
+        <div className="goNextBtn" onClick={goHome}></div>
+        <div className="goNextBtnReal" onClick={goNext}></div>
+    </div>)
 }
 function SlideItem(props) {
     const spring = useSpring({ top: props.active ? "0%" : "120%", position: "absolute" })
@@ -139,7 +151,7 @@ function Cuchara(props) {
 
 function Servilleta({ set }) {
     return (<div className="servilleta" onClick={() => {
-        set(5)
+        set(6)
     }}>
         <MessageCan></MessageCan>
     </div>)
@@ -184,12 +196,12 @@ function MessageCan() {
 
 function VideoSlide({ url }) {
     return (<div className="videoSlide">
-        <iframe width="560" height="315" src={url} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe width="60%" height="50%" src={url} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </div>)
 }
 function PrimerDibujo({set}){
     return(<div className="primerDibujo">
-        <button onClick={()=>{set(1)}}>Siguiente</button>
+        <button onClick={()=>{set(1)}}></button>
     </div>)
 }
 function EnsambleImagenes(){

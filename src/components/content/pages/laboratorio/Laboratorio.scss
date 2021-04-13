@@ -46,28 +46,40 @@ $animationTime: 2s;
 }
 
 .goNextBtn {
-    $size :60px;
-    top: 10px;
+    $size: 6vw;
+    top: 0px;
     right: 10px;
     width: $size;
     height: $size;
-    background-image: url("../../../../assets/img/laboratorio/asterisco.png");
-    background-size: 60%;
+    background-image: url("../../../../assets/img/laboratorio/salir_button.png");
+    background-size: 100%;
     background-repeat: no-repeat;
-    background-color: white;
     background-position: center;
     position: absolute;
-    opacity: 0.8;
     border-radius: 100%;
     cursor: pointer;
     z-index: 100000;
-    border: 2px solid #e531af;
-    
+}
+.goNextBtnReal {
+    $size: 6vw;
+    top: 6vw;
+    right: 10px;
+    width: $size;
+    height: $size;
+    background-image: url("../../../../assets/img/laboratorio/siguiente_button.png");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: absolute;
+    border-radius: 100%;
+    cursor: pointer;
+    z-index: 100000;
 }
 
 .container-of-containers {
     width: 100%;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
 }
@@ -78,6 +90,7 @@ $animationTime: 2s;
     background-size: cover;
     background-repeat: no-repeat;
     height: ($size * 0.86);
+    min-height: ($size * 0.86);
     width: $size;
     border-radius: 25px;
     overflow: hidden;
@@ -102,8 +115,8 @@ $animationTime: 2s;
     align-items: center;
     position: relative;
     & button {
-        width: 200px;
-        height: 150px;
+        width: 10vw;
+        height: 5vw;
         background-color: transparent;
         border: none;
         cursor: pointer;
@@ -151,11 +164,18 @@ $animationTime: 2s;
     align-items: center;
     height: 100%;
     padding: 20px;
-    font-size: 1vw;
+    font-size: 1rem;
     & .tituloTextoCuratorial {
         font-weight: bold;
         font-size: 2rem;
     }
+}
+.textoCuratorialContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 50vw;
 }
 .paginaFinal {
     background: rgba(0, 0, 0, 0.315);
@@ -384,7 +404,7 @@ $cucharayTenedorSize: 25%;
     height: 100%;
 }
 .messageInteractive {
-    $size: 40px;
+    $size: 2vw;
     border: 2px solid #e531af;
     border-radius: 100%;
     width: $size;
@@ -400,7 +420,7 @@ $cucharayTenedorSize: 25%;
     background-size: 60%;
     background-repeat: no-repeat;
 }
-.ensambleImagenes{
+.ensambleImagenes {
     margin: 30px;
     background-image: url("../../../../assets/img/laboratorio/Ensamble.jpg");
     background-position: center;
@@ -408,18 +428,27 @@ $cucharayTenedorSize: 25%;
     background-repeat: no-repeat;
     height: 100%;
 }
-.primerDibujo{
+.primerDibujo {
     background-image: url("../../../../assets/img/laboratorio/primerdibujo.png");
     background-position: center;
     background-size: 100%;
     background-repeat: no-repeat;
     height: 100%;
     position: relative;
-    & button{
+
+    & button {
+        width: 10vw;
+        height: 5vw;
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
         position: absolute;
-        right:20px;
-        top:20px;
-        padding: 20px;
+        top: 20px;
+        right: 20px;
+        background-image: url("../../../../assets/img/laboratorio/siguiente_button.png");
     }
 }
 
@@ -432,17 +461,38 @@ $cucharayTenedorSize: 25%;
     .presentacionLaboratorio {
         .info {
             font-size: 3vw;
-            .nombre{
+            .nombre {
                 font-size: 5vw;
             }
         }
         & .about-laboratorio {
             font-size: 2.5vw;
         }
+        & button {
+            width: 20vw;
+            height: 10vw;
+        }
     }
     .textoCuratorial {
         font-size: 2.5vw;
     }
+    .textoCuratorialContainer {
+        width: 80%;
+    }
+    $buttonSize: 15vw;
 
-  
+    .goNextBtn {
+        width: $buttonSize;
+        height: $buttonSize;
+    }
+    .messageInteractive {
+        $mesSize:5vw;
+        width: $mesSize;
+        height: $mesSize;
+    }
+    .goNextBtnReal {
+        width: $buttonSize;
+        height: $buttonSize;
+        top: $buttonSize;
+    }
 }
