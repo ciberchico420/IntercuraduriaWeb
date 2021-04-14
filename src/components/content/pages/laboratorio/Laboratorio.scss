@@ -158,16 +158,12 @@ $animationTime: 2s;
 }
 
 .textoCuratorial {
-    flex-direction: column;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     height: 100%;
     padding: 20px;
     font-size: 1rem;
     & .tituloTextoCuratorial {
         font-weight: bold;
-        font-size: 2rem;
+        font-size: 1.5rem;
     }
 }
 .textoCuratorialContainer {
@@ -180,7 +176,7 @@ $animationTime: 2s;
 .imagenesTextoCuratorialContainer{
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
 
 }
@@ -194,37 +190,38 @@ $animationTime: 2s;
         width: $size;
         margin-top: 40px;
         margin-bottom: 40px;
+        background-size: auto 100%;
         
     }
     & .uno{
 
         background-image: url("../../../../assets/img/laboratorio/texto/1.jpeg");
         background-position: center;
-        background-size: 100%;
+
     }
     & .dos{
 
         background-image: url("../../../../assets/img/laboratorio/texto/2.JPG");
         background-position: center;
-        background-size: 100%;
+
     }
     & .tres{
 
         background-image: url("../../../../assets/img/laboratorio/texto/3.jpeg");
         background-position: center;
-        background-size: 100%;
+
     }
     & .cuatro{
 
         background-image: url("../../../../assets/img/laboratorio/texto/4.jpg");
         background-position: center;
-        background-size: 100%;
+
     }
     & .cinco{
 
         background-image: url("../../../../assets/img/laboratorio/texto/5.jpg");
         background-position: center;
-        background-size: 100%;
+
     }
     
 }

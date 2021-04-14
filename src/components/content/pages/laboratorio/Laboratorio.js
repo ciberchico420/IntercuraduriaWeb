@@ -222,12 +222,12 @@ function EnsambleImagenes() {
 function TextoCuratorial() {
     return (<div className="textoCuratorial">
 
-        <div style={{ fontSize: ".8rem", color: "gray", textAlign: "center", marginBottom: "20px" }}>La siguiente muestra de dibujos contiene elementos animados que se activan al pasar el cursor encima, desplegando contenido adicional. Para una mejor experiencia sugerimos usar un navegador de escritorio. </div>
+        <div style={{ fontSize: ".8rem", color: "gray", marginBottom: "20px" }}>La siguiente muestra de dibujos contiene elementos animados que se activan al pasar el cursor encima, desplegando contenido adicional. Para una mejor experiencia sugerimos usar un navegador de escritorio. </div>
         <div className="tituloTextoCuratorial">
             Poner la mesa, darse el tiempo
         </div>
-        <div style={{ textAlign: "center" }}>
-            <div style={{ fontSize: ".9rem", textAlign: "center" }}>
+        <div >
+            <div style={{ fontSize: ".9rem" }}>
                 <p>Acompañamiento creativo entre Viviana Reyes y Adriana Flores.</p>
                 <p>Diseño web Casiel Didriksson.</p>
             </div>
@@ -242,13 +242,15 @@ function TextoCuratorial() {
                     ¿Cómo curarnos de nuestros dolores?
                 </ImagenCuratorial>
 
-                <ImagenCuratorial name="cinco"></ImagenCuratorial>
-                <ImagenCuratorial name="cuatro">
+                <ImagenCuratorial name="cinco">
+                    <ImagenCuratorial name="cuatro" marginTop="-2vw">
 
-                    ¿Compartir reflexiones sobre el dolor con la otra y escuchar los suyos es socializar
-                    o es acompañarnos en un mismo dolor?
+                        ¿Compartir reflexiones sobre el dolor con la otra y escuchar los suyos es socializar
+                        o es acompañarnos en un mismo dolor?
 
+                    </ImagenCuratorial>
                 </ImagenCuratorial>
+
                 <ImagenCuratorial name="tres">
                     ¿Cómo se relacionan con la voluntad de hacer arte?
                 </ImagenCuratorial>
@@ -260,16 +262,16 @@ function TextoCuratorial() {
         </div>
     </div>)
 }
-function ImagenCuratorial({ name, children }) {
+function ImagenCuratorial({ name, children,marginTop }) {
 
-    return (<div className="imagenTextoCuratorial">
+    return (<div className="imagenTextoCuratorial" style={{marginTop:marginTop}}>
         <div className={name}>
         </div>
         <span>
             {children}
         </span>
-        
-        </div>)
+
+    </div>)
 }
 function VideoRemedio() {
     return (<VideoSlide url="https://www.youtube.com/embed/u3rd_WDZ1n0"></VideoSlide>)
