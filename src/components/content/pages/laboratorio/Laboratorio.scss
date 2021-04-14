@@ -177,12 +177,65 @@ $animationTime: 2s;
     flex-direction: column;
     width: 50vw;
 }
+.imagenesTextoCuratorialContainer{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+.imagenTextoCuratorial{
+    $size:20vw;
+    width: $size;
+    height: $size;
+    margin: 10px;
+    & >div{
+        background-repeat: no-repeat;
+    }
+    & .uno{
+        height: 100%;
+        width: 100%;
+        background-image: url("../../../../assets/img/laboratorio/texto/1.jpeg");
+        background-position: center;
+        background-size: 100%;
+    }
+    & .dos{
+        height: 100%;
+        width: 100%;
+        background-image: url("../../../../assets/img/laboratorio/texto/2.JPG");
+        background-position: center;
+        background-size: 100%;
+    }
+    & .tres{
+        height: 100%;
+        width: 100%;
+        background-image: url("../../../../assets/img/laboratorio/texto/3.jpeg");
+        background-position: center;
+        background-size: 100%;
+    }
+    & .cuatro{
+        height: 100%;
+        width: 100%;
+        background-image: url("../../../../assets/img/laboratorio/texto/4.jpg");
+        background-position: center;
+        background-size: 100%;
+    }
+    & .cinco{
+        height: 100%;
+        width: 100%;
+        background-image: url("../../../../assets/img/laboratorio/texto/5.jpg");
+        background-position: center;
+        background-size: 100%;
+    }
+    
+}
 .paginaFinal {
-    background: rgba(0, 0, 0, 0.315);
+    background-image: url("../../../../assets/img/laboratorio/inicio.JPG");
+    background-position: center;
     height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
+    background-size: 100%;
 }
 
 .mantel-container {

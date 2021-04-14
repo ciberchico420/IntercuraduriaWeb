@@ -99,7 +99,7 @@ function Post(props) {
         </div>)
 
 }
-function ShareButtons(props) {
+export function ShareButtons(props) {
     let iconSize = props.size;
     return (<div className="share">
         <FacebookShareButton url={window.location.href}><FacebookIcon size={iconSize} round={true} /></FacebookShareButton>
