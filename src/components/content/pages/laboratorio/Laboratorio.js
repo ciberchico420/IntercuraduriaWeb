@@ -118,7 +118,7 @@ function PaginaFinal() {
             <div style={{ display: "flex", alignItems: "center", marginTop: "20px", border: "2px solid blue", flexDirection: "column", backgroundColor: "white", borderRadius: "20px", padding: "20px", boxShadow: "20px 20px 10px #00000021" }}>
                 <p style={{ fontSize: "20px" }}>¡Muchas gracias por ver la exposición!</p>
                 <p style={{ fontSize: "20px" }}>Comparte esta experiencia.</p>
-              <ShareButtons size="40px"></ShareButtons>
+                <ShareButtons size="40px"></ShareButtons>
             </div>
 
         </div>
@@ -226,8 +226,8 @@ function TextoCuratorial() {
         <div className="tituloTextoCuratorial">
             Poner la mesa, darse el tiempo
         </div>
-        <div  style={{textAlign:"center"}}>
-            <div style={{fontSize:".9rem",textAlign:"center"}}>
+        <div style={{ textAlign: "center" }}>
+            <div style={{ fontSize: ".9rem", textAlign: "center" }}>
                 <p>Acompañamiento creativo entre Viviana Reyes y Adriana Flores.</p>
                 <p>Diseño web Casiel Didriksson.</p>
             </div>
@@ -238,20 +238,40 @@ function TextoCuratorial() {
             <p> Para intentar llegar al fondo de estas pulsiones, dispusimos dentro de cada uno de los elementos de la mesa, rituales cotidianos como momento idóneo para hablar con unx mismx. Fotografías para no olvidar la belleza de los placeres sencillos, notas y dibujos colaborativos para quitarse el miedo y encontrar un poco de luz en la mirada de la otra; para sentir el dolor y dejarlo entrar.
             </p>
             <div className="imagenesTextoCuratorialContainer">
-                <ImagenCuratorial name="uno"></ImagenCuratorial>
-                <ImagenCuratorial name="dos"></ImagenCuratorial>
-                <ImagenCuratorial name="tres"></ImagenCuratorial>
-                <ImagenCuratorial name="cuatro"></ImagenCuratorial>
+                <ImagenCuratorial name="dos">
+                    ¿Cómo curarnos de nuestros dolores?
+                </ImagenCuratorial>
+
                 <ImagenCuratorial name="cinco"></ImagenCuratorial>
+                <ImagenCuratorial name="cuatro">
+
+                    ¿Compartir reflexiones sobre el dolor con la otra y escuchar los suyos es socializar
+                    o es acompañarnos en un mismo dolor?
+
+                </ImagenCuratorial>
+                <ImagenCuratorial name="tres">
+                    ¿Cómo se relacionan con la voluntad de hacer arte?
+                </ImagenCuratorial>
+                <ImagenCuratorial name="uno">
+                    Viviana viste la mesa con elementos de su cotidianeidad, me invita a entrar en intimidad, a quitarnos los zapatos y títulos empolvados, para entrar en un espacio seguro a distender el cuerpo y dejar que a vapor, broten los impulsos creativos. Hacemos un ejercicio de reconocimiento. A ambas nos interesa el dolor, el placer pero sobre todo la sanación entendida como un lugar suave y aterciopelado al que es posible llegar después de una serie de hábitos, rituales, menjurjes cotidianos y votos de confianza como proceso de curación.
+                </ImagenCuratorial>
+
             </div>
         </div>
     </div>)
 }
-function ImagenCuratorial({name}){
+function ImagenCuratorial({ name, children }) {
 
-    return( <div className="imagenTextoCuratorial"><div className={name}></div></div>)
+    return (<div className="imagenTextoCuratorial">
+        <div className={name}>
+        </div>
+        <span>
+            {children}
+        </span>
+        
+        </div>)
 }
-function VideoRemedio(){
+function VideoRemedio() {
     return (<VideoSlide url="https://www.youtube.com/embed/u3rd_WDZ1n0"></VideoSlide>)
 }
 function VideoVivianaPintando() {
