@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/static/css/main.b411f936.chunk.css",
-    "main.js": "/static/js/main.a7e96326.chunk.js",
-    "main.js.map": "/static/js/main.a7e96326.chunk.js.map",
+    "main.css": "/static/css/main.8ba0e3d9.chunk.css",
+    "main.js": "/static/js/main.bedd2434.chunk.js",
+    "main.js.map": "/static/js/main.bedd2434.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.ea9dd109.js",
     "runtime-main.js.map": "/static/js/runtime-main.ea9dd109.js.map",
     "static/js/2.1c1fdb9b.chunk.js": "/static/js/2.1c1fdb9b.chunk.js",
@@ -10,12 +10,12 @@
     "static/js/3.8567804d.chunk.js": "/static/js/3.8567804d.chunk.js",
     "static/js/3.8567804d.chunk.js.map": "/static/js/3.8567804d.chunk.js.map",
     "index.html": "/index.html",
-    "static/css/main.b411f936.chunk.css.map": "/static/css/main.b411f936.chunk.css.map",
+    "static/css/main.8ba0e3d9.chunk.css.map": "/static/css/main.8ba0e3d9.chunk.css.map",
     "static/js/2.1c1fdb9b.chunk.js.LICENSE.txt": "/static/js/2.1c1fdb9b.chunk.js.LICENSE.txt",
+    "static/media/Laboratorio.scss": "/static/media/tetera.f2218ee4.png",
     "static/media/Adriana.5a4ae077.png": "/static/media/Adriana.5a4ae077.png",
     "static/media/home.scss": "/static/media/Heebo.06b31cf4.ttf",
     "static/media/Emi.98f50c6b.png": "/static/media/Emi.98f50c6b.png",
-    "static/media/Laboratorio.scss": "/static/media/tetera.f2218ee4.png",
     "static/media/proac.scss": "/static/media/Proac logo.ca244ecd.png",
     "static/media/circulo.ec2627f0.png": "/static/media/circulo.ec2627f0.png",
     "static/media/Lightbox.scss": "/static/media/fondo-nosotras.6b8cac40.png"
@@ -23,7 +23,7 @@
   "entrypoints": [
     "static/js/runtime-main.ea9dd109.js",
     "static/js/2.1c1fdb9b.chunk.js",
-    "static/css/main.b411f936.chunk.css",
-    "static/js/main.a7e96326.chunk.js"
+    "static/css/main.8ba0e3d9.chunk.css",
+    "static/js/main.bedd2434.chunk.js"
   ]
 }
