@@ -176,12 +176,12 @@ $animationTime: 2s;
 .imagenesTextoCuratorialContainer{
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     justify-content: center;
 
 }
 .imagenTextoCuratorial{
-    $size:20vw;
+    $size:30vw;
     width: $size;
     
     & >div{
@@ -190,8 +190,7 @@ $animationTime: 2s;
         width: $size;
         margin-top: 40px;
         margin-bottom: 40px;
-        background-size: auto 100%;
-        
+        background-size: 100%;
     }
     & .uno{
 

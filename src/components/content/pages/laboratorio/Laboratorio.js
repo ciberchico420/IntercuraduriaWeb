@@ -227,9 +227,12 @@ function TextoCuratorial() {
             Poner la mesa, darse el tiempo
         </div>
         <div >
-            <div style={{ fontSize: ".9rem" }}>
-                <p>Acompañamiento creativo entre Viviana Reyes y Adriana Flores.</p>
-                <p>Diseño web Casiel Didriksson.</p>
+            <div style={{ fontSize: ".7rem" }}>
+                <div>Acompañamiento creativo entre Viviana Reyes y Adriana Flores.
+                    <br/>Diseño web Casiel Didriksson.
+                </div>
+                <br/>
+                
             </div>
 
 
@@ -243,7 +246,7 @@ function TextoCuratorial() {
                 </ImagenCuratorial>
 
                 <ImagenCuratorial name="cinco">
-                    <ImagenCuratorial name="cuatro" marginTop="-2vw">
+                    <ImagenCuratorial name="cuatro" marginTop="-11vh">
 
                         ¿Compartir reflexiones sobre el dolor con la otra y escuchar los suyos es socializar
                         o es acompañarnos en un mismo dolor?
@@ -255,10 +258,10 @@ function TextoCuratorial() {
                     ¿Cómo se relacionan con la voluntad de hacer arte?
                 </ImagenCuratorial>
                 <ImagenCuratorial name="uno">
-                    Viviana viste la mesa con elementos de su cotidianeidad, me invita a entrar en intimidad, a quitarnos los zapatos y títulos empolvados, para entrar en un espacio seguro a distender el cuerpo y dejar que a vapor, broten los impulsos creativos. Hacemos un ejercicio de reconocimiento. A ambas nos interesa el dolor, el placer pero sobre todo la sanación entendida como un lugar suave y aterciopelado al que es posible llegar después de una serie de hábitos, rituales, menjurjes cotidianos y votos de confianza como proceso de curación.
                 </ImagenCuratorial>
 
             </div>
+            <div> Viviana viste la mesa con elementos de su cotidianeidad, me invita a entrar en intimidad, a quitarnos los zapatos y títulos empolvados, para entrar en un espacio seguro a distender el cuerpo y dejar que a vapor, broten los impulsos creativos. Hacemos un ejercicio de reconocimiento. A ambas nos interesa el dolor, el placer pero sobre todo la sanación entendida como un lugar suave y aterciopelado al que es posible llegar después de una serie de hábitos, rituales, menjurjes cotidianos y votos de confianza como proceso de curación.</div>
         </div>
     </div>)
 }
