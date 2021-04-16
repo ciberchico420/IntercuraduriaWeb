@@ -103,7 +103,6 @@ export function ShareButtons(props) {
     let iconSize = props.size;
     return (<div className="share">
         <FacebookShareButton url={window.location.href}><FacebookIcon size={iconSize} round={true} /></FacebookShareButton>
-        <FacebookMessengerShareButton url={window.location.href}><FacebookMessengerIcon size={iconSize} round={true} /></FacebookMessengerShareButton>
         <WhatsappShareButton url={window.location.href}><WhatsappIcon size={iconSize} round={true} /></WhatsappShareButton>
         <TwitterShareButton url={window.location.href}><TwitterIcon size={iconSize} round={true} /></TwitterShareButton>
 
