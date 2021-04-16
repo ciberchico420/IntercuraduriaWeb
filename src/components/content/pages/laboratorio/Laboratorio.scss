@@ -183,6 +183,7 @@ $animationTime: 2s;
 .imagenTextoCuratorial{
     $size:30vw;
     width: $size;
+    text-align: center;
     
     & >div{
         background-repeat: no-repeat;

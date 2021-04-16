@@ -222,7 +222,7 @@ function EnsambleImagenes() {
 function TextoCuratorial() {
     return (<div className="textoCuratorial">
 
-        <div style={{ fontSize: ".8rem", color: "gray", marginBottom: "20px" }}>La siguiente muestra de dibujos contiene elementos animados que se activan al pasar el cursor encima, desplegando contenido adicional. Para una mejor experiencia sugerimos usar un navegador de escritorio. </div>
+        <div style={{ fontSize: ".8rem", color: "gray", marginBottom: "20px" }}>La siguiente muestra dispone sobre la mesa seis elementos animados que despliegan contenido adicional al dar click sobre la estrella. El orden del recorrido es a gusto y sazón de cada quien, sin embargo se sugiere comenzar por el ipad y finalizar en la servilleta para navegar la muestra completa. Para una mejor experiencia sugerimos usar un navegador de escritorio.</div>
         <div className="tituloTextoCuratorial">
             Poner la mesa, darse el tiempo
         </div>
