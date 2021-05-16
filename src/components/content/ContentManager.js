@@ -94,8 +94,8 @@ export default function ContentManager(props) {
             </DRoute>
             <DRoute open={openPage} showContent={showContent} path={"/talleres"} child={<Programas category="5" type="Talleres"></Programas>}>
             </DRoute>
-            <DRoute open={openPage} showContent={showContent} path={"/laboratorio"} child={<Laboratorio/>}>
-            </DRoute>
+            {/*<DRoute open={openPage} showContent={showContent} path={"/laboratorio"} child={<Laboratorio/>}>
+            </DRoute>*/}
             <DRoute open={openPage} showContent={showContent} path={"/proac"} child={<ProAc/>}>
             </DRoute>
 
